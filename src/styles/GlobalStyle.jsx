@@ -1,0 +1,36 @@
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+	margin: 0;
+        box-sizing: border-box;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  ul,
+  li {
+    list-style: none;
+    padding: 0;
+  }
+
+  input {
+          border: none;
+          outline: none;
+  }
+
+  button {
+          border: none;
+          background: transparent;
+          cursor: pointer;
+  }
+`;
+
+export default GlobalStyle;
