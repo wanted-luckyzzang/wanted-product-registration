@@ -40,6 +40,7 @@ const Grid = (props) => {
 		borderBottom,
 		borderRight,
 		scrollY,
+		children,
 	};
 
 	return checkGrid === "form" ? (
