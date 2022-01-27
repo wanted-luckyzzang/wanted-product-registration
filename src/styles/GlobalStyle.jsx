@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
@@ -6,8 +6,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-	margin: 0;
-        box-sizing: border-box;
+	  margin: 0;
+    box-sizing: border-box;
   }
 
   a {
@@ -22,14 +22,24 @@ const GlobalStyle = createGlobalStyle`
   }
 
   input {
-          border: none;
-          outline: none;
+    border: none;
+    outline: none;
   }
 
+  input:active,
+  input:focus {
+		border: none;
+		outline: none;
+	}
+
   button {
-          border: none;
-          background: transparent;
-          cursor: pointer;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  button:active {
+    outline: none;
   }
 `;
 
