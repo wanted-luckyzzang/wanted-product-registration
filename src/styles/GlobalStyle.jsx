@@ -22,14 +22,14 @@ const GlobalStyle = createGlobalStyle`
   }
 
   input {
-          border: none;
-          outline: none;
+    border: none;
+    outline: none;
   }
 
   button {
-          border: none;
-          background: transparent;
-          cursor: pointer;
+    border: none;
+    background: transparent;
+    cursor: pointer;
   }
 `;
 
