@@ -4,13 +4,31 @@ import { Grid, Button, Text, Input } from "common";
 import DateRangeInputPicker from "utils/pickers/DateRangePicker";
 
 export const SalesPeriodSetting = (props) => {
-	const [radioBtnChecked, setRadioBtnChecked] = useState(false);
-	const radioBtnClickedHandler = () => {
-		setRadioBtnChecked(() => !radioBtnChecked);
+	const [selectedShowingOption, setSelectedShowingOption] = useState();
+	const [selectedSellingOption, setSelectedSellingOption] = useState();
+
+	const SelectShowingBtnHandler = (e) => {
+		setSelectedShowingOption(e.target.value);
+	};
+	const SelectSellingBtngHandler = (e) => {
+		setSelectedSellingOption(e.target.value);
+	};
+
+	const submitHandler = (e) => {
+		e.preventDefault();
+		console.log(e);
 	};
 
 	return (
-		<Grid width="60rem" margin="20px auto 20px" border isFlex column>
+		<Grid
+			width="60rem"
+			margin="20px auto 20px"
+			border
+			isFlex
+			column
+			checkGrid="form"
+			_onSubmit={submitHandler}
+		>
 			<Grid height="48px" isFlex align="center" borderBottom>
 				노출 및 판매기간 설정
 			</Grid>
@@ -22,20 +40,29 @@ export const SalesPeriodSetting = (props) => {
 					<div>
 						<input
 							type="radio"
-							value="radioBtnChecked"
-							checked={radioBtnChecked}
-							onClick={radioBtnClickedHandler}
-							readOnly
+							value="noLimitForShowing"
+							checked={selectedShowingOption === "noLimitForShowing"}
+							onChange={SelectShowingBtnHandler}
 						/>
-						<span>제한 없음</span>
+						<label>제한 없음</label>
 					</div>
 					<div>
-						<input type="radio" />
-						<span>미노출</span>
+						<input
+							type="radio"
+							value="NoneForShowing"
+							checked={selectedShowingOption === "NoneForShowing"}
+							onChange={SelectShowingBtnHandler}
+						/>
+						<label>미노출</label>
 					</div>
 					<div>
-						<input type="radio" />
-						<span>노출 기간 설정</span>
+						<input
+							type="radio"
+							value="setForShowing"
+							checked={selectedShowingOption === "setForShowing"}
+							onChange={SelectShowingBtnHandler}
+						/>
+						<label>노출 기간 설정</label>
 					</div>
 					<DateRangeInputPicker />
 				</Grid>
@@ -46,18 +73,34 @@ export const SalesPeriodSetting = (props) => {
 				</Grid>
 				<Grid width="50rem" borderRight isFlex column>
 					<div>
-						<input type="radio" />
-						<span>제한 없음</span>
+						<input
+							type="radio"
+							value="noLimitForSelling"
+							checked={selectedSellingOption === "noLimitForSelling"}
+							onChange={SelectSellingBtngHandler}
+						/>
+						<label>제한 없음</label>
 					</div>
 					<div>
-						<input type="radio" />
-						<span>미판매</span>
+						<input
+							type="radio"
+							value="NoneForSelling"
+							checked={selectedSellingOption === "NoneForSelling"}
+							onChange={SelectSellingBtngHandler}
+						/>
+						<label>미판매</label>
 					</div>
 					<div>
-						<input type="radio" />
-						<span>판매 기간 설정</span>
+						<input
+							type="radio"
+							value="setForSelling"
+							checked={selectedSellingOption === "setForSelling"}
+							onChange={SelectSellingBtngHandler}
+						/>
+						<label>판매 기간 설정</label>
 					</div>
 					<DateRangeInputPicker />
+					<button>저장하기</button>
 				</Grid>
 			</Grid>
 		</Grid>
