@@ -50,7 +50,7 @@ const ImageUpload = () => {
       <Input
         type="file"
         _ref={imgInputRef}
-        onChange={imgChange}
+        _onChange={imgChange}
         multiple
         none={true}
       />
