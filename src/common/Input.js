@@ -13,6 +13,8 @@ const Input = (props) => {
 		multiple,
 		_ref,
 		_onChange,
+		_onFocus,
+		_onBlur,
 		height,
 	} = props;
 
@@ -31,7 +33,9 @@ const Input = (props) => {
 			placeholder={placeholder}
 			ref={_ref}
 			multiple={multiple}
-			refonChange={_onChange}
+			onChange={_onChange}
+			onFocus={_onFocus}
+			onBlur={_onBlur}
 		/>
 	);
 };
@@ -46,6 +50,7 @@ Input.defaultProps = {
 	multiple: false,
 	_ref: null,
 	_onChange: () => {},
+	_onFocus: () => {},
 };
 
 const ElInput = styled.input`
