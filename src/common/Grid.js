@@ -14,6 +14,7 @@ const Grid = (props) => {
 		justify,
 		align,
 		bg,
+		radius,
 		border,
 		borderBottom,
 		borderRight,
