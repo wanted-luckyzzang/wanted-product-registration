@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Input = (props) => {
-  const { width, padding, margin, type, radio, checked, placeholder, onChange } = props;
+  const { width, padding, margin, type, checked, placeholder, none, multiple, onChange } = props;
 
   const styles = {
     width,
@@ -10,7 +10,9 @@ const Input = (props) => {
     margin,
   };
 
-  return <ElInput {...styles} radio={radio} type={type} checked={checked} placeholder={placeholder} onChange={onChange} />;
+  return (
+    <ElInput {...styles} type={type} checked={checked} placeholder={placeholder} none={none} multiple={multiple} onChange={onChange} />
+  );
 };
 
 Input.defaultProps = {
@@ -18,8 +20,9 @@ Input.defaultProps = {
   padding: '',
   margin: '0',
   checked: false,
-  radio: false,
   placeholder: '',
+  none: false,
+  multiple: false,
   _onChange: () => {},
 };
 
@@ -30,6 +33,7 @@ const ElInput = styled.input`
   margin: ${(props) => props.margin};
   border: 1px solid #ebebeb;
   border-radius: 4px;
+  ${(props) => (props.none ? 'display: none;' : '')}
 `;
 
 export default Input;
