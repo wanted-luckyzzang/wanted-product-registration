@@ -1,76 +1,78 @@
-import React from 'react';
-import styled from 'styled-components';
-import { border, text } from 'styles/palette';
+import React from "react";
+import styled from "styled-components";
+import { border, text } from "styles/palette";
 
 const Grid = (props) => {
-  const { width, height, padding, margin, isFlex, column, justify, align, bg, radius, border, borderBottom, borderRight, auto, children } =
-    props;
+	const {
+		width,
+		height,
+		padding,
+		margin,
+		isFlex,
+		column,
+		justify,
+		align,
+		bg,
+		radius,
+		border,
+		borderBottom,
+		borderRight,
+		auto,
+		children,
+	} = props;
 
-  const styles = {
-    width,
-    height,
-    padding,
-    margin,
-    isFlex,
-    column,
-    justify,
-    align,
-    bg,
-    radius,
-    border,
-    borderBottom,
-    borderRight,
-    auto,
-  };
+	const styles = {
+		width,
+		height,
+		padding,
+		margin,
+		isFlex,
+		column,
+		justify,
+		align,
+		bg,
+		radius,
+		border,
+		borderBottom,
+		borderRight,
+		auto,
+	};
 
-  return <ElGrid {...styles}>{children}</ElGrid>;
+	return <ElGrid {...styles}>{children}</ElGrid>;
 };
 
 Grid.defaultProps = {
-  width: '100%',
-  height: 'auto',
-  padding: '',
-  margin: '',
-  isFlex: false,
-  column: false,
-  justify: '',
-  align: '',
-  bg: '#fff',
-  radius: false,
-  border: false,
-  borderBottom: false,
-  borderRight: false,
-  auto: false,
+	width: "100%",
+	height: "auto",
+	padding: "",
+	margin: "",
+	isFlex: false,
+	column: false,
+	justify: "",
+	align: "",
+	bg: "#fff",
+	radius: false,
+	border: false,
+	borderBottom: false,
+	borderRight: false,
 };
 
 const ElGrid = styled.div`
-  width: ${(props) => props.width};
-  height: ${(props) => props.height};
-  ${(props) => (props.padding ? `padding: ${props.padding};` : '')}
-  ${(props) => (props.margin ? `margin: ${props.margin};` : '')}
-  ${(props) => (props.isFlex ? 'display: flex;' : '')}
-  ${(props) => (props.column ? 'flex-direction: column;' : '')}
+	width: ${(props) => props.width};
+	height: ${(props) => props.height};
+	${(props) => (props.padding ? `padding: ${props.padding};` : "")}
+	${(props) => (props.margin ? `margin: ${props.margin};` : "")}
+  ${(props) => (props.isFlex ? "display: flex;" : "")}
+  ${(props) => (props.column ? "flex-direction: column;" : "")}
 	${(props) => `justify-content: ${props.justify};`};
-  ${(props) => `align-items: ${props.align};`};
-  background: ${(props) => props.bg};
-  ${(props) => (props.radius ? 'border-radius: 4px' : '')};
-  ${(props) => (props.border ? `border: 2px solid ${border.primary};` : '')};
-  ${(props) => (props.borderBottom ? `border-bottom: 1px solid ${border.primary};` : '')};
-  ${(props) => (props.borderRight ? `border-right: 1px solid ${border.primary};` : '')};
-  ${(props) => (props.auto ? 'overflow: auto;' : '')};
-
-  &::-webkit-scrollbar {
-    width: 0.6rem;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: ${text.light};
-    border-radius: 1rem;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
+	${(props) => `align-items: ${props.align};`};
+	background: ${(props) => props.bg};
+	${(props) => (props.radius ? "border-radius: 4px" : "")};
+	${(props) => (props.border ? `border: 2px solid ${border.primary};` : "")};
+	${(props) =>
+		props.borderBottom ? `border-bottom: 1px solid ${border.primary};` : ""};
+	${(props) =>
+		props.borderRight ? `border-right: 1px solid ${border.primary};` : ""};
 `;
 
 export default Grid;

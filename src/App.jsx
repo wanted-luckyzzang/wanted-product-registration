@@ -1,15 +1,14 @@
 import React from "react";
 import GlobalStyle from "styles/GlobalStyle";
-import { Category } from "components/Category";
-import "styles/App.css";
+import { SalesPeriodSetting } from "components/SalesPeriodSetting";
 
 function App() {
-  return (
-    <>
-      <GlobalStyle />
-      <Category />
-    </>
-  );
+	return (
+		<>
+			<GlobalStyle />
+			<SalesPeriodSetting />
+		</>
+	);
 }
 
 export default App;
