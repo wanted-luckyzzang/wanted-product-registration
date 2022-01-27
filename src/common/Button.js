@@ -1,15 +1,15 @@
 import styled from 'styled-components';
-import { border } from 'styles/palette';
+import { bg, text, border } from 'styles/palette';
 
 export default function Button(props) {
-  const { width, height, bg, color, margin, border, children, _onClick } = props;
+  const { width, height, margin, bg, color, border, children, _onClick } = props;
 
   const styles = {
     width,
     height,
+    margin,
     bg,
     color,
-    margin,
     border,
   };
 
@@ -22,10 +22,9 @@ export default function Button(props) {
 
 Button.defaultProps = {
   width: '100%',
-  height: '54px',
-  bg: border.primary,
-  color: '#fff',
-  disable: false,
+  height: '40px',
+  bg: bg.primary,
+  color: text.default,
   margin: '0',
   border: '',
   children: null,
@@ -40,7 +39,7 @@ const ElButton = styled.button`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
   margin: ${(props) => props.margin};
-  border: 1px solid ${(props) => props.border};
+  border: 1px solid ${border.button};
   background: ${(props) => props.bg};
   color: ${(props) => props.color};
   border-radius: 4px;
