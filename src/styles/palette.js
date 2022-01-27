@@ -1,17 +1,20 @@
 const text = {
-  default: '#262626',
-  light: '#6e6e6e',
+  dark: '#060606',
+  default: '#373737',
+  light: '#6d6d6d',
 };
 
 const bg = {
   primary: '#352f6e',
-  category: '#ededf2',
+  category: '#efeef3',
   tag: '#e8f7d4',
 };
 
 const border = {
-  primary: '#8986a8',
-  remove: '#e46565',
+  primary: '#e3e3e3',
+  radio: '#b5b5b5',
+  button: '#424143',
+  remove: '#dd3838',
 };
 
 export { text, bg, border };
