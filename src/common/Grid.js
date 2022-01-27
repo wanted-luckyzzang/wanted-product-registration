@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { border } from 'styles/palette';
 
 const Grid = (props) => {
-  const { width, height, padding, margin, isFlex, column, justify, align, bg, border, borderBottom, borderRight, children } = props;
+  const { width, height, padding, margin, isFlex, column, justify, align, bg, radius, border, borderBottom, borderRight, children } = props;
 
   const styles = {
     width,
@@ -15,6 +15,7 @@ const Grid = (props) => {
     justify,
     align,
     bg,
+    radius,
     border,
     borderBottom,
     borderRight,
@@ -33,6 +34,7 @@ Grid.defaultProps = {
   justify: '',
   align: '',
   bg: '#fff',
+  radius: false,
   border: false,
   borderBottom: false,
   borderRight: false,
@@ -48,6 +50,7 @@ const ElGrid = styled.div`
 	${(props) => `justify-content: ${props.justify};`};
   ${(props) => `align-items: ${props.align};`};
   background: ${(props) => props.bg};
+  ${(props) => (props.radius ? 'border-radius: 4px' : '')};
   ${(props) => (props.border ? `border: 2px solid ${border.primary};` : '')};
   ${(props) => (props.borderBottom ? `border-bottom: 1px solid ${border.primary};` : '')};
   ${(props) => (props.borderRight ? `border-right: 1px solid ${border.primary};` : '')};
