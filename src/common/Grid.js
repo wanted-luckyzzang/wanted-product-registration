@@ -43,7 +43,7 @@ const ElGrid = styled.div`
 	${(props) => `justify-content: ${props.justify};`};
   ${(props) => `align-items: ${props.align};`};
   background: ${(props) => props.bg};
-  ${(props) => (props.border ? `border: ${props.border};` : '')};
+  ${(props) => (props.border ? `border: 1px solid ${props.border};` : '')};
 `;
 
 export default Grid;
