@@ -4,15 +4,16 @@ import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import DateRangePicker from "@mui/lab/DateRangePicker";
 
-export default function DateRangeInputPicker() {
+export default function DateRangeInputPicker(props) {
 	const [value, setValue] = React.useState([null, null]);
 	const styled = {
 		inputSytle: {
-			width: "160px",
-			height: "25px",
+			width: "170px",
+			height: "35px",
 			textAlign: "center",
 			fontWeight: "600",
 			textTransform: "uppercase",
+			border: "1px solid rgb(215, 215, 215)",
 		},
 	};
 
@@ -21,7 +22,7 @@ export default function DateRangeInputPicker() {
 			<DateRangePicker
 				value={value}
 				inputFormat={"yyyy.MM.dd yy:mm"}
-				mask={"____-__-__"}
+				mask={"____.__.__ __:__"}
 				onChange={(newValue) => setValue(newValue)}
 				renderInput={(startProps, endProps) => (
 					<React.Fragment>
