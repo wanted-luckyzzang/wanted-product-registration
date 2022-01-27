@@ -28,7 +28,7 @@ export default function DatePicker() {
 				<MobileDatePicker
 					value={value}
 					inputFormat={"yyyy.MM.dd"}
-					mask={"____-__-__"}
+					mask={"____.__.__"}
 					onChange={(newValue) => {
 						setValue(newValue);
 					}}
