@@ -29,6 +29,7 @@ const ElInput = styled.input`
   padding: ${(props) => props.padding};
   margin: ${(props) => props.margin};
   border: 1px solid #ebebeb;
+  border-radius: 4px;
 `;
 
 export default Input;

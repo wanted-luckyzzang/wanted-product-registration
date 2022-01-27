@@ -32,6 +32,10 @@ const GlobalStyle = createGlobalStyle`
 		outline: none;
 	}
 
+  p {
+    margin: 0;
+  }
+
   button {
     border: none;
     background: transparent;
