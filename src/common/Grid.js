@@ -20,7 +20,7 @@ const Grid = (props) => {
     scrollY,
     children,
   } = props;
-
+  
   const styles = {
     width,
     height,
@@ -32,6 +32,7 @@ const Grid = (props) => {
     justify,
     align,
     bg,
+    radius,
     border,
     borderBottom,
     borderRight,

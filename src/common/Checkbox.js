@@ -45,12 +45,14 @@ const Icon = styled.svg`
 
 const StyledCheckBox = styled.div`
   display: inline-block;
-  width: 2rem;
-  height: 2rem;
+  width: 1.8rem;
+  height: 1.8rem;
   border: ${(props) => (props.checked ? 'none' : 'solid 0.1rem #dddddd')};
   background: ${(props) => (props.checked ? 'black' : 'white')};
   border-radius: 0.4rem;
   transition: all 150ms;
+  margin-right: 0.8rem;
+  cursor: pointer;
 
   ${Icon} {
     visibility: ${(props) => (props.checked ? 'visible' : 'hidden')};
@@ -60,7 +62,6 @@ const StyledCheckBox = styled.div`
 const HiddenCheckBox = styled.input`
   border: 0;
   clip: rect(0 0 0 0);
-  /* clippath: inset(50%); */
   height: 1px;
   margin: -1px;
   overflow: hidden;
