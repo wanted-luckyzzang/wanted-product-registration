@@ -7,15 +7,28 @@ export const SalesPeriodSetting = (props) => {
 	const [selectedShowingOption, setSelectedShowingOption] = useState();
 	const [selectedSellingOption, setSelectedSellingOption] = useState();
 
-	const SelectShowingBtnHandler = (event) => {
-		setSelectedShowingOption(event.target.value);
+	const SelectShowingBtnHandler = (e) => {
+		setSelectedShowingOption(e.target.value);
 	};
-	const SelectSellingBtngHandler = (event) => {
-		setSelectedSellingOption(event.target.value);
+	const SelectSellingBtngHandler = (e) => {
+		setSelectedSellingOption(e.target.value);
+	};
+
+	const submitHandler = (e) => {
+		e.preventDefault();
+		console.log(e);
 	};
 
 	return (
-		<Grid width="60rem" margin="20px auto 20px" border isFlex column>
+		<Grid
+			width="60rem"
+			margin="20px auto 20px"
+			border
+			isFlex
+			column
+			checkGrid="form"
+			_onSubmit={submitHandler}
+		>
 			<Grid height="48px" isFlex align="center" borderBottom>
 				노출 및 판매기간 설정
 			</Grid>
@@ -87,6 +100,7 @@ export const SalesPeriodSetting = (props) => {
 						<label>판매 기간 설정</label>
 					</div>
 					<DateRangeInputPicker />
+					<button>저장하기</button>
 				</Grid>
 			</Grid>
 		</Grid>
