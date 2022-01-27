@@ -1,19 +1,19 @@
-import React, { useState } from "react";
-import { Grid, Button, Text } from "common";
-import { text } from "styles/palette";
-import Input from "common/Input";
-import { bg } from "styles/palette";
-import SearchTag from "./SearchTag";
+import React, { useState } from 'react';
+import { Grid, Button, Text } from 'common';
+import { text } from 'styles/palette';
+import Input from 'common/Input';
+import { bg } from 'styles/palette';
+import SearchTag from './SearchTag';
 
 const FilterTag = () => {
   const [filterClick, setFilterClick] = useState(0);
 
   const test = (event) => {
-    event.target.placeholder = "검색어를 입력하세요.";
+    event.target.placeholder = '검색어를 입력하세요.';
     setFilterClick(1);
   };
   const test2 = (event) => {
-    event.target.placeholder = "필터태그를 검색해 주세요.";
+    event.target.placeholder = '필터태그를 검색해 주세요.';
     setFilterClick(0);
   };
 

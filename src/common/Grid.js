@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { border } from "styles/palette";
+import React from 'react';
+import styled from 'styled-components';
+import { border } from 'styles/palette';
 
 const Grid = (props) => {
   const {
@@ -42,44 +42,44 @@ const Grid = (props) => {
 };
 
 Grid.defaultProps = {
-  width: "100%",
-  height: "auto",
-  padding: "",
-  margin: "",
+  width: '100%',
+  height: 'auto',
+  padding: '',
+  margin: '',
   isFlex: false,
-  isWrap: "",
+  isWrap: '',
   column: false,
-  justify: "",
-  align: "",
-  bg: "#fff",
+  justify: '',
+  align: '',
+  bg: '#fff',
   border: false,
   borderBottom: false,
   borderRight: false,
-  scrollY: "",
+  scrollY: '',
 };
 
 const ElGrid = styled.div`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
-  ${(props) => (props.padding ? `padding: ${props.padding};` : "")}
-  ${(props) => (props.margin ? `margin: ${props.margin};` : "")}
-  ${(props) => (props.isFlex ? "display: flex;" : "")}
-  ${(props) => (props.isWrap ? "flex-wrap: wrap;" : "")}
-  ${(props) => (props.column ? "flex-direction: column;" : "")}
+  ${(props) => (props.padding ? `padding: ${props.padding};` : '')}
+  ${(props) => (props.margin ? `margin: ${props.margin};` : '')}
+  ${(props) => (props.isFlex ? 'display: flex;' : '')}
+  ${(props) => (props.isWrap ? 'flex-wrap: wrap;' : '')}
+  ${(props) => (props.column ? 'flex-direction: column;' : '')}
 	${(props) => `justify-content: ${props.justify};`};
   ${(props) => `align-items: ${props.align};`};
   background: ${(props) => props.bg};
-  ${(props) => (props.border ? `border: 2px solid ${border.primary};` : "")};
+  ${(props) => (props.border ? `border: 2px solid ${border.primary};` : '')};
   ${(props) =>
-    props.borderBottom ? `border-bottom: 1px solid ${border.primary};` : ""};
+    props.borderBottom ? `border-bottom: 1px solid ${border.primary};` : ''};
   ${(props) =>
-    props.borderRight ? `border-right: 1px solid ${border.primary};` : ""};
+    props.borderRight ? `border-right: 1px solid ${border.primary};` : ''};
   ${(props) =>
     props.scrollY
       ? `overflow: scroll;
       &::-webkit-scrollbar{width:8px; height:0px; background: rgba(255,255,255,0.4)};
       &::-webkit-scrollbar-thumb{background-color:rgba(0,0,0,0.4); border-radius:6px;};`
-      : ""};
+      : ''};
 `;
 
 export default Grid;

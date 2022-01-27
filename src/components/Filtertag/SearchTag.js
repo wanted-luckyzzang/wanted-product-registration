@@ -1,7 +1,7 @@
-import React from "react";
-import { Grid } from "common";
-import { bg } from "styles/palette";
-import TAG_LIST from "components/Filtertag/tagData";
+import React from 'react';
+import { Grid } from 'common';
+import { bg } from 'styles/palette';
+import TAG_LIST from 'components/Filtertag/tagData';
 
 const SearchTag = () => {
   return (
