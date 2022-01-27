@@ -3,24 +3,42 @@ import styled from "styled-components";
 import { border } from "styles/palette";
 
 const Grid = (props) => {
-	const {
-		width,
-		height,
-		padding,
-		margin,
-		isFlex,
-		isWrap,
-		column,
-		justify,
-		align,
-		bg,
-		radius,
-		border,
-		borderBottom,
-		borderRight,
-		scrollY,
-		children,
-	} = props;
+  const {
+    width,
+    height,
+    padding,
+    margin,
+    isFlex,
+    isWrap,
+    column,
+    justify,
+    align,
+    bg,
+    radius,
+    border,
+    borderBottom,
+    borderRight,
+    scrollY,
+    children,
+  } = props;
+
+  const styles = {
+    width,
+    height,
+    padding,
+    margin,
+    isFlex,
+    isWrap,
+    column,
+    justify,
+    align,
+    bg,
+    radius,
+    border,
+    borderBottom,
+    borderRight,
+    scrollY,
+  };
 
 	const styles = {
 		width,
