@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { border } from 'styles/palette';
 
 const Grid = (props) => {
-  const { width, height, padding, margin, isFlex, column, justify, align, bg, border, children } = props;
+  const { width, height, padding, margin, isFlex, column, justify, align, bg, border, borderBottom, borderRight, children } = props;
 
   const styles = {
     width,
@@ -15,6 +16,8 @@ const Grid = (props) => {
     align,
     bg,
     border,
+    borderBottom,
+    borderRight,
   };
 
   return <ElGrid {...styles}>{children}</ElGrid>;
@@ -30,7 +33,9 @@ Grid.defaultProps = {
   justify: '',
   align: '',
   bg: '#fff',
-  border: '',
+  border: false,
+  borderBottom: false,
+  borderRight: false,
 };
 
 const ElGrid = styled.div`
@@ -43,7 +48,9 @@ const ElGrid = styled.div`
 	${(props) => `justify-content: ${props.justify};`};
   ${(props) => `align-items: ${props.align};`};
   background: ${(props) => props.bg};
-  ${(props) => (props.border ? `border: 1px solid ${props.border};` : '')};
+  ${(props) => (props.border ? `border: 2px solid ${border.primary};` : '')};
+  ${(props) => (props.borderBottom ? `border-bottom: 1px solid ${border.primary};` : '')};
+  ${(props) => (props.borderRight ? `border-right: 1px solid ${border.primary};` : '')};
 `;
 
 export default Grid;
