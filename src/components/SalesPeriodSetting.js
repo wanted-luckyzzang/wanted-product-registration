@@ -25,6 +25,7 @@ export const SalesPeriodSetting = (props) => {
 							value="radioBtnChecked"
 							checked={radioBtnChecked}
 							onClick={radioBtnClickedHandler}
+							readOnly
 						/>
 						<span>제한 없음</span>
 					</div>
