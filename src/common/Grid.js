@@ -14,13 +14,14 @@ const Grid = (props) => {
     justify,
     align,
     bg,
+    radius,
     border,
     borderBottom,
     borderRight,
     scrollY,
     children,
   } = props;
-  
+
   const styles = {
     width,
     height,
