@@ -6,6 +6,7 @@ const text = {
 
 const bg = {
   primary: '#352f6e',
+  field: '#fbfbfb',
   category: '#efeef3',
   tag: '#e8f7d4',
 };

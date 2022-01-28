@@ -1,10 +1,10 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Grid, Text, Button } from 'common';
 import { bg, border } from 'styles/palette';
 import { Link } from 'react-router-dom';
 import CATEGORY from 'utils/categoryData';
 
-export const Category = (props) => {
+const Category = () => {
   const [selectedTag, setSelectedTag] = useState([]);
 
   const checkHandler = useCallback(
@@ -25,11 +25,8 @@ export const Category = (props) => {
 
   return (
     <Grid width='45rem' margin='1rem auto' border isFlex column>
-      <Grid height='3rem' isFlex align='center' borderBottom>
-        <Text bold>상품 기본 정보</Text>
-      </Grid>
       <Grid isFlex height='20rem'>
-        <Grid width='12rem' borderRight bg={bg.category}>
+        <Grid width='12rem' bg={bg.field}>
           카테고리 *
         </Grid>
         <Grid isFlex padding='0.8rem'>
@@ -50,7 +47,7 @@ export const Category = (props) => {
                 return (
                   <Grid key={idx} isFlex align='center' margin='0 0 0.6rem'>
                     <Button _onClick={() => onDeleteTag(item)} border={border.button} bg={bg.category}>
-                      {item}
+                      {item} X
                     </Button>
                   </Grid>
                 );
@@ -69,3 +66,5 @@ export const Category = (props) => {
     </Grid>
   );
 };
+
+export default Category;
