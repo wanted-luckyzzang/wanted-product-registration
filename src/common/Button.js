@@ -83,4 +83,5 @@ const ElButton = styled.button`
 	${(props) => props.bg && `background: ${props.bg};`};
 	${(props) => props.border && `border: 1px solid ${props.border};`};
 	border-radius: 4px;
+	font-weight: ${(props) => (props.bold ? "700" : "400")};
 `;
