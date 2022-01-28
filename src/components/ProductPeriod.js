@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid } from 'common';
 import DateRangeInputPicker from 'utils/pickers/DateRangePicker';
+import { bg } from 'styles/palette';
 
 const ProductPeriod = ({ type, selectedOption, selectBtnHandler }) => {
   let title, label1, label2, label3;
@@ -23,7 +24,7 @@ const ProductPeriod = ({ type, selectedOption, selectBtnHandler }) => {
   };
   return (
     <Grid isFlex height="13rem" borderBottom>
-      <Grid width="10rem" borderRight padding="1rem 0 0 1rem">
+      <Grid width="10rem" borderRight padding="1rem 0 0 1rem" bg={bg.field}>
         {title}
       </Grid>
       <Grid width="50rem" borderRight isFlex column padding="1rem 0 0 1rem">
