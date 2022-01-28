@@ -1,25 +1,35 @@
-import React from 'react';
-import { Grid } from 'common';
+import React, { useCallback } from 'react';
+import { Button, Grid } from 'common';
 import { bg } from 'styles/palette';
 import TAG_LIST from 'components/Filtertag/tagData';
 
-const SearchTag = () => {
+const SearchTag = ({ selectedTag, setSelectedTag }) => {
+  const addTag = useCallback(
+    (event) => {
+      const newTag = event.target.innerText;
+      if (!selectedTag.includes(newTag))
+        setSelectedTag([...selectedTag, event.target.innerText]);
+    },
+    [selectedTag, setSelectedTag]
+  );
+
   return (
     <Grid isFlex isWrap width="100%" scrollY height="10rem">
-      {TAG_LIST.sort().map((tag) => (
+      {TAG_LIST.sort().map((tag, idx) => (
         <Grid
-          width="20%"
+          width="7rem"
           isFlex
           justify="center"
-          padding=".5rem 0"
-          margin=".5rem"
-          bg={bg.tag}
+          margin="0 0 0 0.3rem"
+          key={idx}
         >
-          {tag}
+          <Button height="2.3rem" bg={bg.tag} _onClick={addTag}>
+            {tag}
+          </Button>
         </Grid>
       ))}
     </Grid>
   );
 };
 
-export default SearchTag;
+export default React.memo(SearchTag);
