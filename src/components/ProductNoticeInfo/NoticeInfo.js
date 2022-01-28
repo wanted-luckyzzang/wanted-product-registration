@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Grid, Button, Text, Input } from "common";
 
@@ -116,17 +116,6 @@ const NoticeInfo = () => {
 						</Button>
 					</div>
 				</Main>
-				<Footer>
-					<Button
-						width="100%"
-						bg="transparent"
-						color="#352f6e"
-						border="1.5px solid #352f6e"
-						fontWeight="bold"
-					>
-						+ 정보고시 추가
-					</Button>
-				</Footer>
 			</Grid>
 		</>
 	);

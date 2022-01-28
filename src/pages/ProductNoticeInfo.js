@@ -24,7 +24,6 @@ const ProductNoticeInfo = () => {
 		<Grid isFlex>
 			<Grid border isFlex column>
 				<Grid marginTop="2rem" border isFlex column border>
-					{/* 15번 상품 정보 고시 */}
 					<Grid border height="2.5rem" width="auto" margin="2rem 2rem 0 2rem">
 						<Text bold size="1rem" margin="0.5rem">
 							상품 정보 고시
@@ -39,6 +38,7 @@ const ProductNoticeInfo = () => {
 							align="center"
 							border
 						>
+							{/* 15번 상품 정보 고시 */}
 							<NoticeInfo />
 							<Footer>
 								<Button
@@ -56,7 +56,7 @@ const ProductNoticeInfo = () => {
 							</Footer>
 						</Grid>
 					)}
-					{/* 16-18 상품 배송 설정 */}
+
 					<Grid
 						border
 						borderBottom="transparent"
@@ -75,9 +75,10 @@ const ProductNoticeInfo = () => {
 						align="center"
 						border
 					>
+						{/* 16-18 상품 배송 설정 */}
 						<ProductShppingSetting />
 					</Grid>
-					{/* 19번 마일리지 적립 */}
+
 					<Grid
 						border
 						borderBottom="transparent"
@@ -96,9 +97,10 @@ const ProductNoticeInfo = () => {
 						align="center"
 						border
 					>
+						{/* 19번 마일리지 적립 */}
 						<SaveMileage />
 					</Grid>
-					{/* 20번 감사카드 제공 */}
+
 					<Grid
 						border
 						borderBottom="transparent"
@@ -117,6 +119,7 @@ const ProductNoticeInfo = () => {
 						align="center"
 						border
 					>
+						{/* 20번 감사카드 제공 */}
 						<OfferThankCard />
 					</Grid>
 				</Grid>
