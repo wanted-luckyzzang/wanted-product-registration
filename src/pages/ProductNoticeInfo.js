@@ -12,11 +12,8 @@ import Navbar from "components/Navbar";
 import Sidebar from "components/Sidebar";
 const ProductNoticeInfo = (props) => {
 	return (
-		<Grid width="60rem" isFlex>
-			<Sidebar />
-			<Grid width="55rem" border isFlex column>
-				<Header />
-				<Navbar />
+		<Grid isFlex>
+			<Grid border isFlex column>
 				<Grid marginTop="2rem" border isFlex column border>
 					{/* 15번 상품 정보 고시 */}
 					<Grid
