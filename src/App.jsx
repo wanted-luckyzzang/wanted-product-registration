@@ -1,17 +1,22 @@
-import React from "react";
-import GlobalStyle from "styles/GlobalStyle";
-import { Category } from "components/Category";
-import "styles/App.css";
-import FilterTag from "components/Filtertag";
-import { SalesPeriodSetting } from "components/SalesPeriodSetting";
+import React from 'react';
+import GlobalStyle from 'styles/GlobalStyle';
+import { Category } from 'pages/Category';
+import 'styles/App.css';
+import FilterTag from 'components/Filtertag';
+import { SalesPeriodSetting } from 'pages/SalesPeriodSetting';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
-	return (
-		<>
-			<GlobalStyle />
-			<SalesPeriodSetting />
-		</>
-	);
+  return (
+    <>
+      <GlobalStyle />
+      <Routes>
+        <Route path='/' element={<Category />} />
+        <Route path='/period' element={<SalesPeriodSetting />} />
+        <Route path='/filtertag' element={<FilterTag />} />
+      </Routes>
+    </>
+  );
 }
 
 export default App;
