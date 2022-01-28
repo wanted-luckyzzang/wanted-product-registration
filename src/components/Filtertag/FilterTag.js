@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import { Grid, Button, Text } from 'common';
 import { text } from 'styles/palette';
 import Input from 'common/Input';
@@ -12,21 +12,23 @@ const FilterTag = () => {
   const [searchWord, setSearchWord] = useState('');
   const inputRef = useRef(null);
 
-  const focusInput = (event) => {
+  const focusInput = useCallback((event) => {
     event.target.placeholder = '검색어를 입력하세요.';
     setTagClick(1);
-  };
-  const blurInput = (event) => {
+  }, []);
+
+  const blurInput = useCallback((event) => {
     event.target.placeholder = '필터태그를 검색해 주세요.';
     setTimeout(() => {
       inputRef.current.value = '';
       setSearchWord('');
       setTagClick(0);
     }, 90);
-  };
-  const changeInput = (event) => {
+  }, []);
+
+  const changeInput = useCallback((event) => {
     setSearchWord(event.target.value);
-  };
+  }, []);
 
   return (
     <Grid width="40rem" margin="2rem auto 2rem" border isFlex column>
