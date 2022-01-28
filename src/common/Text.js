@@ -30,6 +30,7 @@ Text.defaultProps = {
 	bold: false,
 	color: text.default,
 	textAlign: "initial",
+	margin: "",
 };
 const ElText = styled.p`
 	font-size: ${(props) => props.size};
