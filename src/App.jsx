@@ -17,8 +17,8 @@ function App() {
         <Route path="/" element={<ProductsPeriodSetting />} />
         <Route path="/basicinfo" element={<BasicInfo />} />
         <Route path="/productoption" element={<ProductOption />} />
-        <Route path="/noticeinfo" element={<ProductNoticeInfo />} />
         <Route path="/imageselect" element={<ImageSelect />} />
+        <Route path="/noticeinfo" element={<ProductNoticeInfo />} />
       </Routes>
     </Layout>
   );

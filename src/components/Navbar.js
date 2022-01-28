@@ -27,7 +27,11 @@ const Navbar = () => {
           >
             노출 및 판매기간 설정
           </Button>
-          <Button border="none" borderBottom="1px solid #E3E3E3">
+          <Button
+            border="none"
+            borderBottom="1px solid #E3E3E3"
+            _onClick={() => navigate(`/basicinfo`)}
+          >
             상품 기본 정보
           </Button>
           <Button
