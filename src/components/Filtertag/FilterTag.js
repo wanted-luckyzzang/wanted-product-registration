@@ -5,7 +5,6 @@ import Input from 'common/Input';
 import { bg } from 'styles/palette';
 import SearchTag from './SearchTag';
 import SelectedTag from './SelectedTag';
-import ProductName from 'components/ProductName';
 
 const FilterTag = () => {
   const [tagClick, setTagClick] = useState(0);
@@ -32,62 +31,57 @@ const FilterTag = () => {
   }, []);
 
   return (
-    <>
-      //FilterComponent
-      <Grid isFlex border width="30rem">
-        <Grid width="13rem">
-          <Grid
-            bg={bg.category}
-            height="3.5rem"
-            isFlex
-            align="center"
-            padding="0 0 0 .5rem"
-          >
-            <Text bold>필터 태그</Text>
-          </Grid>
-        </Grid>
-        <Grid isFlex column position="relative">
-          <Grid isFlex height="3.5rem" borderBottom padding=".5rem 0 0 0">
-            <Input
-              placeholder="필터태그를 검색해 주세요."
-              width="80%"
-              height="80%"
-              padding=".5rem"
-              _onFocus={focusInput}
-              _onBlur={blurInput}
-              _onChange={changeInput}
-              _ref={inputRef}
-            />
-            <Button
-              width="20%"
-              height="80%"
-              bg="#fff"
-              border={text.dark}
-              color={text.dark}
-            >
-              검색
-            </Button>
-          </Grid>
-          {selectedTag.length !== 0 && (
-            <SelectedTag
-              selectedTag={selectedTag}
-              setSelectedTag={setSelectedTag}
-            />
-          )}
-          {tagClick === 1 && (
-            <SearchTag
-              searchWord={searchWord}
-              setSearchWord={setSearchWord}
-              selectedTag={selectedTag}
-              setSelectedTag={setSelectedTag}
-              inputRef={inputRef}
-            />
-          )}
+    <Grid isFlex border width="30rem">
+      <Grid width="13rem">
+        <Grid
+          bg={bg.category}
+          height="3.5rem"
+          isFlex
+          align="center"
+          padding="0 0 0 .5rem"
+        >
+          <Text bold>필터 태그</Text>
         </Grid>
       </Grid>
-      //ProductNameComponent
-      <ProductName />
-    </>
+      <Grid isFlex column position="relative">
+        <Grid isFlex height="3.5rem" borderBottom padding=".5rem 0 0 0">
+          <Input
+            placeholder="필터태그를 검색해 주세요."
+            width="80%"
+            height="80%"
+            padding=".5rem"
+            _onFocus={focusInput}
+            _onBlur={blurInput}
+            _onChange={changeInput}
+            _ref={inputRef}
+          />
+          <Button
+            width="20%"
+            height="80%"
+            bg="#fff"
+            border={text.dark}
+            color={text.dark}
+          >
+            검색
+          </Button>
+        </Grid>
+        {selectedTag.length !== 0 && (
+          <SelectedTag
+            selectedTag={selectedTag}
+            setSelectedTag={setSelectedTag}
+          />
+        )}
+        {tagClick === 1 && (
+          <SearchTag
+            searchWord={searchWord}
+            setSearchWord={setSearchWord}
+            selectedTag={selectedTag}
+            setSelectedTag={setSelectedTag}
+            inputRef={inputRef}
+          />
+        )}
+      </Grid>
+    </Grid>
   );
 };
 
