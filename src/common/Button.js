@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import icon from "Assets/deleteIcon.png";
-import { bg, text, border } from "styles/palette";
+import styled from 'styled-components';
+import icon from 'Assets/deleteIcon.png';
+import { bg, text, border } from 'styles/palette';
 
 export default function Button(props) {
   const {
@@ -28,26 +28,26 @@ export default function Button(props) {
 
   return (
     <>
-      {type === "button" ? (
+      {type === 'button' ? (
         <ElButton {...styles} type={type} onClick={_onClick}>
           {children}
         </ElButton>
       ) : (
         <div
           style={{
-            width: "1.3rem",
-            height: "1.3rem",
-            borderRadius: "50%",
-            border: "1px solid #e3e3e3",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            cursor: "pointer",
+            width: '1.3rem',
+            height: '1.3rem',
+            borderRadius: '50%',
+            border: '1px solid #e3e3e3',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            cursor: 'pointer',
             ...sx,
           }}
           onClick={onClick}
         >
-          <img src={icon} style={{ width: "1.1rem" }} />
+          <img src={icon} style={{ width: '1.1rem' }} />
         </div>
       )}
     </>
@@ -55,12 +55,12 @@ export default function Button(props) {
 }
 
 Button.defaultProps = {
-  width: "100%",
-  height: "40px",
+  width: '100%',
+  height: '40px',
   children: null,
-  bg: "black",
-  type: "button",
-  border: "red",
+  bg: 'black',
+  type: 'button',
+  border: 'red',
   _onClick: () => {},
 };
 
@@ -70,9 +70,9 @@ const ElButton = styled.button`
   justify-content: center;
   width: ${(props) => props.width};
   height: ${(props) => props.height};
-  ${(props) => (props.margin ? `margin: ${props.margin};` : "")}
-  ${(props) => (props.color ? `color: ${props.color}` : "")}
-  ${(props) => (props.bg ? `background: ${props.bg}` : "")};
-  ${(props) => (props.border ? `border: 1px solid ${props.border}` : "")}
+  ${(props) => (props.margin ? `margin: ${props.margin};` : '')}
+  ${(props) => (props.color ? `color: ${props.color};` : '')}
+  ${(props) => (props.bg ? `background: ${props.bg};` : '')};
+  ${(props) => (props.border ? `border: 1px solid ${props.border};` : '')}
   border-radius: 4px;
 `;
