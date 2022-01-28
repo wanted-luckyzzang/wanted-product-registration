@@ -3,19 +3,7 @@ import icon from 'Assets/deleteIcon.png';
 import { bg, text, border } from 'styles/palette';
 
 export default function Button(props) {
-  const {
-    width,
-    height,
-    margin,
-    bg,
-    color,
-    border,
-    children,
-    _onClick,
-    type,
-    sx,
-    onClick,
-  } = props;
+  const { width, height, margin, bg, color, border, children, _onClick, type, sx, onClick } = props;
 
   const styles = {
     width,
@@ -58,7 +46,8 @@ Button.defaultProps = {
   width: '100%',
   height: '40px',
   children: null,
-  bg: 'black',
+  bg: '#fff',
+  color: '#000',
   type: 'button',
   border: 'red',
   _onClick: () => {},
