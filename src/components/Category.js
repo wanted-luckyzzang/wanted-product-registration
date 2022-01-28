@@ -1,7 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { Grid, Text, Button } from 'common';
 import { bg, border } from 'styles/palette';
-import { Link } from 'react-router-dom';
 import CATEGORY from 'utils/categoryData';
 
 const Category = () => {
@@ -24,17 +23,28 @@ const Category = () => {
   );
 
   return (
-    <Grid width='45rem' margin='1rem auto' border isFlex column>
-      <Grid isFlex height='20rem'>
-        <Grid width='12rem' bg={bg.field}>
+    <Grid isFlex column borderBottom>
+      <Grid isFlex height="20rem">
+        <Grid width="10rem" bg={bg.field} padding="1rem 0 0 1rem">
           카테고리 *
         </Grid>
-        <Grid isFlex padding='0.8rem'>
-          <Grid width='18rem' height='14rem' border padding='0.8rem 1.2rem' margin='0 1rem 0 0' scrollY>
+        <Grid isFlex padding="0.8rem">
+          <Grid
+            width="50%"
+            border
+            padding="0.8rem 1.2rem"
+            margin="0 1rem 0 0"
+            scrollY
+          >
             {CATEGORY.map((item, idx) => {
               return (
-                <Grid key={idx} isFlex align='center' margin='0 0 0.6rem'>
-                  <input id='check' type='checkbox' value={item} onChange={(e, item) => checkHandler(e, item)} />
+                <Grid key={idx} isFlex align="center" margin="0 0 0.6rem">
+                  <input
+                    id="check"
+                    type="checkbox"
+                    value={item}
+                    onChange={(e, item) => checkHandler(e, item)}
+                  />
                   {item}
                 </Grid>
               );
@@ -42,11 +52,15 @@ const Category = () => {
           </Grid>
 
           {selectedTag.length > 0 ? (
-            <Grid width='13rem' padding='0.8rem 1.2rem' border scrollY>
+            <Grid width="50%" padding="0.8rem 1.2rem" border scrollY>
               {selectedTag.map((item, idx) => {
                 return (
-                  <Grid key={idx} isFlex align='center' margin='0 0 0.6rem'>
-                    <Button _onClick={() => onDeleteTag(item)} border={border.button} bg={bg.category}>
+                  <Grid key={idx} isFlex align="center" margin="0 0 0.6rem">
+                    <Button
+                      _onClick={() => onDeleteTag(item)}
+                      border={border.button}
+                      bg={bg.category}
+                    >
                       {item} X
                     </Button>
                   </Grid>
@@ -54,15 +68,20 @@ const Category = () => {
               })}
             </Grid>
           ) : (
-            <Grid width='14rem' padding='0.8rem 1.2rem' border scrollY isFlex justify='center' align='center'>
+            <Grid
+              width="50%"
+              padding="0.8rem 1.2rem"
+              border
+              scrollY
+              isFlex
+              justify="center"
+              align="center"
+            >
               <Text>카테고리를 지정해주세요.</Text>
             </Grid>
           )}
         </Grid>
       </Grid>
-      <Button>
-        <Link to='/period'>다음</Link>
-      </Button>
     </Grid>
   );
 };

@@ -4,10 +4,11 @@ import { bg } from 'styles/palette';
 
 const ProductRest = () => {
   return (
-    <Grid isFlex border>
-      <Grid width="20%">
+    <Grid isFlex borderBottom>
+      <Grid>
         <Grid
-          bg={bg.category}
+          width="8.6rem"
+          bg={bg.field}
           height="3.5rem"
           isFlex
           align="center"
@@ -29,4 +30,4 @@ const ProductRest = () => {
   );
 };
 
-export default React.memo(ProductRest);
+export default ProductRest;
