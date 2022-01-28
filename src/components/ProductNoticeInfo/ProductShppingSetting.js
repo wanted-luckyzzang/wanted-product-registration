@@ -20,7 +20,9 @@ const PreOrderShipping = (props) => {
 					<Grid width="8rem" borderRight padding="0.5rem">
 						<OptionTitle>방문 수령</OptionTitle>
 					</Grid>
-					<Switch />
+					<SwithBox>
+						<Switch />
+					</SwithBox>
 				</Grid>
 				<Grid isFlex height="25rem" width="auto">
 					<Grid width="8rem" borderRight padding="0.5rem">
@@ -28,9 +30,16 @@ const PreOrderShipping = (props) => {
 						<OptionTitle>예약 배송</OptionTitle>
 					</Grid>
 					<Grid width="40rem" isFlex column margin="1rem 1.5rem">
-						<Options>
+						<div
+							style={{
+								height: "1rem",
+								position: "relative",
+								margin: "auto 0",
+								padding: "0 0.5rem",
+							}}
+						>
 							<Switch />
-						</Options>
+						</div>
 						<Grid isFlex margin="1rem 0">
 							<Options>주문 시간</Options>
 							<DateRangeInputPicker />
@@ -65,8 +74,10 @@ const Options = styled.div`
 `;
 
 const SwithBox = styled.div`
-	width: 3rem;
-	height: 3rem;
+	height: 1rem;
+	position: relative;
+	margin: auto 0;
+	padding: 0 2rem;
 `;
 
 export default PreOrderShipping;
