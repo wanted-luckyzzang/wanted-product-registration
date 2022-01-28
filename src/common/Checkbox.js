@@ -4,7 +4,6 @@ import { FaCheck } from 'react-icons/fa';
 
 const Checkbox = (props) => {
   const { checked, _onClick } = props;
-  console.log(checked);
 
   return <Checkedbox onClick={_onClick}>{checked ? <FaCheck color='#fff' /> : ''}</Checkedbox>;
 };
@@ -21,6 +20,7 @@ const Checkedbox = styled.div`
   margin-right: 0.6rem;
   border: 1px solid #8e8e8e;
   cursor: pointer;
+  /* background: ${(props) => (props.checked ? '#4b0082' : '#fff')}; */
   background: indigo;
   display: flex;
   justify-content: center;

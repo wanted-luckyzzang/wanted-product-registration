@@ -6,10 +6,8 @@ import CATEGORY from 'utils/categoryData';
 
 export const Category = (props) => {
   // const navigate = useNavigate();
-  const [bChecked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(false);
   const [checkedItems, setCheckedItems] = useState(new Set());
-
-  const category = [];
 
   const checkedItemHandler = useCallback(
     (item, isChecked) => {
@@ -25,11 +23,11 @@ export const Category = (props) => {
   );
 
   const checkHandler = useCallback(
-    ({ target }, item) => {
-      setChecked(!bChecked);
-      checkedItemHandler(item, target.checked);
+    (e, item) => {
+      setChecked(!checked);
+      checkedItemHandler(item, e.target.checked);
     },
-    [bChecked, checkedItemHandler]
+    [checked, checkedItemHandler]
   );
 
   return (
@@ -46,13 +44,8 @@ export const Category = (props) => {
             {CATEGORY.map((item, idx) => {
               return (
                 <Grid key={idx} isFlex align='center' margin='0 0 0.6rem'>
-                  <Checkbox
-                    checked={bChecked}
-                    _onClick={() => {
-                      console.log(bChecked);
-                      setChecked(!bChecked);
-                    }}
-                  />
+                  {/* <Checkbox checked={bChecked} _onClick={checkHandler} /> */}
+                  <input type='checkbox' checked={checked} onChange={checkHandler} />
                   <Text>{item}</Text>
                 </Grid>
               );
