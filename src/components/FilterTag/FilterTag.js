@@ -31,46 +31,29 @@ const FilterTag = () => {
   }, []);
 
   return (
-    <Grid isFlex border width="30rem">
-      <Grid width="13rem">
-        <Grid
-          bg={bg.category}
-          height="3.5rem"
-          isFlex
-          align="center"
-          padding="0 0 0 .5rem"
-        >
+    <Grid isFlex border width='30rem'>
+      <Grid width='13rem'>
+        <Grid bg={bg.category} height='3.5rem' isFlex align='center' padding='0 0 0 .5rem'>
           <Text bold>필터 태그</Text>
         </Grid>
       </Grid>
-      <Grid isFlex column position="relative">
-        <Grid isFlex height="3.5rem" borderBottom padding=".5rem 0 0 0">
+      <Grid isFlex column position='relative'>
+        <Grid isFlex height='3.5rem' borderBottom padding='.5rem 0 0 0'>
           <Input
-            placeholder="필터태그를 검색해 주세요."
-            width="80%"
-            height="80%"
-            padding=".5rem"
+            placeholder='필터태그를 검색해 주세요.'
+            width='80%'
+            height='80%'
+            padding='.5rem'
             _onFocus={focusInput}
             _onBlur={blurInput}
             _onChange={changeInput}
             _ref={inputRef}
           />
-          <Button
-            width="20%"
-            height="80%"
-            bg="#fff"
-            border={text.dark}
-            color={text.dark}
-          >
+          <Button width='20%' height='80%' bg='#fff' border={text.dark} color={text.dark}>
             검색
           </Button>
         </Grid>
-        {selectedTag.length !== 0 && (
-          <SelectedTag
-            selectedTag={selectedTag}
-            setSelectedTag={setSelectedTag}
-          />
-        )}
+        {selectedTag.length !== 0 && <SelectedTag selectedTag={selectedTag} setSelectedTag={setSelectedTag} />}
         {tagClick === 1 && (
           <SearchTag
             searchWord={searchWord}
