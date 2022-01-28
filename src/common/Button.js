@@ -17,6 +17,7 @@ export default function Button(props) {
     sx,
     borderBottom,
     borderTop,
+    justify,
   } = props;
 
   const styles = {
@@ -30,15 +31,12 @@ export default function Button(props) {
     bold,
     borderBottom,
     borderTop,
+    justify,
   };
 
   return (
     <>
-      {type === 'button' ? (
-        <ElButton {...styles} type={type} onClick={_onClick}>
-          {children}
-        </ElButton>
-      ) : (
+      {type === 'delete' && (
         <div
           style={{
             width: '1.3rem',
@@ -56,6 +54,9 @@ export default function Button(props) {
           <img src={icon} style={{ width: '1.1rem' }} alt="product" />
         </div>
       )}
+      <ElButton {...styles} type={type} onClick={_onClick}>
+        {children}
+      </ElButton>
     </>
   );
 }
@@ -66,15 +67,16 @@ Button.defaultProps = {
   children: null,
   bg: '#fff',
   color: '#000',
-  type: 'button',
+  type: '',
   border: '1px solid #e3e3e3',
+  justify: 'center',
   _onClick: () => {},
 };
 
 const ElButton = styled.button`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: ${(props) => props.justify}
   width: ${(props) => props.width};
   height: ${(props) => props.height};
   ${(props) => props.margin && `margin: ${props.margin};`};
