@@ -23,6 +23,14 @@ const ProductNoticeInfo = () => {
 		]);
 	};
 
+	const DeleteNoticeInfoHandler = (idx) => {
+		setNoticeInfo((prev) => {
+			return [...prev].filter((el, elIdx) => {
+				return elIdx !== idx;
+			});
+		});
+	};
+
 	return (
 		<Grid isFlex>
 			<Grid border isFlex column>
@@ -42,7 +50,11 @@ const ProductNoticeInfo = () => {
 					>
 						{/* 15번 상품 정보 고시 */}
 						{noticeInfo.map((el, idx) => (
-							<NoticeInfo key={el.key} />
+							<NoticeInfo
+								DeleteNoticeInfoHandler={DeleteNoticeInfoHandler}
+								key={el.key}
+								idx={idx}
+							/>
 						))}
 
 						<Footer>
