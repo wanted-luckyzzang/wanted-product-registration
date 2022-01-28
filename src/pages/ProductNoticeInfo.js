@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
 import { Grid, Button, Text } from "common";
@@ -8,12 +8,18 @@ import {
 	ProductShppingSetting,
 	SaveMileage,
 } from "components/ProductNoticeInfo/index";
-const ProductNoticeInfo = () => {
+const ProductNoticeInfo = ({}) => {
 	const [noticeInfo, setNoticeInfo] = useState([
 		{
 			noticeInfo: uuidv4(),
 		},
 	]);
+
+	const ChangeNoticeInfohandler = (e) => {
+		console.log(e);
+		console.log(e.target.value);
+	};
+
 	const AddNoticeInfoHandler = () => {
 		setNoticeInfo((prev) => [
 			...prev,
@@ -30,6 +36,17 @@ const ProductNoticeInfo = () => {
 			});
 		});
 	};
+
+	const valueList = document
+		.querySelectorAll("input")
+		.forEach((el) => el.value);
+	console.log(valueList);
+
+	// useEffect(() => {
+	// 	if (click) {
+	// 		console.log("상품명", valueList[0]);
+	// 	}
+	// });
 
 	return (
 		<Grid isFlex>
@@ -52,7 +69,8 @@ const ProductNoticeInfo = () => {
 						{noticeInfo.map((el, idx) => (
 							<NoticeInfo
 								DeleteNoticeInfoHandler={DeleteNoticeInfoHandler}
-								key={el.key}
+								ChangeNoticeInfohandler={ChangeNoticeInfohandler}
+								key={idx}
 								idx={idx}
 							/>
 						))}
@@ -143,11 +161,6 @@ const ProductNoticeInfo = () => {
 		</Grid>
 	);
 };
-const OptionTitle = styled.div`
-	border-bottom: "1px solid #E3E3E3";
-	font-size: "1rem";
-	height: "2rem";
-`;
 
 const Footer = styled.div`
 	width: 95.2%;

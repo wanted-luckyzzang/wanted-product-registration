@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
 import { Grid, Button, Input } from 'common';
+import { border } from 'styles/palette';
 
 const PreviewImage = styled.img`
   width: 100%;
@@ -75,7 +76,7 @@ const ImageUpload = ({ preview }) => {
         </Grid>
       ) : (
         <div style={{ display: 'flex' }}>
-          <Button _onClick={addImageButton} width='14rem' color='red' bg='lightgreen' border='black' type='button'>
+          <Button _onClick={addImageButton} width='14rem' border={border.button} type='button'>
             + 이미지 첨부
           </Button>
 

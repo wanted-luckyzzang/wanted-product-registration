@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
+import TAG_LIST from 'utils/tagData';
 import { Button, Grid, Text } from 'common';
 import { bg } from 'styles/palette';
-import TAG_LIST from 'utils/tagData';
 
 const SearchTag = ({ searchWord, setSearchWord, selectedTag, setSelectedTag, inputRef }) => {
   let searchTagList = TAG_LIST;
