@@ -1,6 +1,7 @@
-import BasicInfo from "./BasicInfo";
-import ProductsPeriodSetting from "./ProductsPeriodSetting";
-import ProductNoticeInfo from "./ProductNoticeInfo";
-import ProductOption from "./ProductOption";
+import ProductsPeriodSetting from './ProductsPeriodSetting';
+import BasicInfo from './BasicInfo';
+import ProductOption from './ProductOption';
+import ProductImage from './ProductImage';
+import ProductNoticeInfo from './ProductNoticeInfo';
 
-export { BasicInfo, ProductsPeriodSetting, ProductNoticeInfo, ProductOption };
+export { ProductsPeriodSetting, BasicInfo, ProductOption, ProductImage, ProductNoticeInfo };

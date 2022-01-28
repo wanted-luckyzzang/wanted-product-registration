@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useRef } from 'react';
+import CATEGORY from 'utils/categoryData';
 import { Grid, Text, Button } from 'common';
 import { bg, border } from 'styles/palette';
-import CATEGORY from 'utils/categoryData';
 
 const Category = () => {
   const [selectedTag, setSelectedTag] = useState([]);

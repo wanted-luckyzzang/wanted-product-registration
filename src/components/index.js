@@ -4,6 +4,7 @@ import ImageUpload from './ImageUpload';
 import Layout from './Layout';
 import Header from './Header';
 import SubHeader from './SubHeader';
+import ProductPeriod from './ProductPeriod';
 import ProductInfo from './ProductInfo';
 import ProductRest from './ProductRest';
 import ProductImage from './ProductImage';
@@ -19,6 +20,7 @@ export {
   Layout,
   Header,
   SubHeader,
+  ProductPeriod,
   ProductInfo,
   ProductRest,
   ProductImage,
