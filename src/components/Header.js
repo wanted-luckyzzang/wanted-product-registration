@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Grid, Button, Text } from 'common';
+import { Grid } from 'common';
 
 const Header = () => {
   return (

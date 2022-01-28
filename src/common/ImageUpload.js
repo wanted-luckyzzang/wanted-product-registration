@@ -103,8 +103,8 @@ const ImageUpload = ({ preview }) => {
             _onClick={addImageButton}
             width="14rem"
             color="red"
-            bg="lightgreen"
-            border="black"
+            bg="#fff"
+            border="#363168"
             type="button"
           >
             <Text>+ 이미지 첨부</Text>
@@ -112,16 +112,11 @@ const ImageUpload = ({ preview }) => {
 
           <Grid margin="0 0 0 1em">
             {images.map((el) => (
-              <Grid
-                isFlex
-                align="center"
-                style={{ display: 'flex' }}
-                key={uuidv4()}
-              >
-                {el}
+              <Grid isFlex align="center" key={uuidv4()}>
+                <Text margin="0 2rem 0 0">{el}</Text>
                 <Button
                   sx={{ marginLeft: '0.5rem' }}
-                  onClick={imageDeleteButton}
+                  _onClick={imageDeleteButton}
                   type="delete"
                 />
               </Grid>
