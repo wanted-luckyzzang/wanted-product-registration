@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { v1 } from 'uuid';
 import { Grid, Text, Input } from 'common';
 import { bg } from 'styles/palette';
 
-const ProductName = () => {
+const ProductInfo = ({ click }) => {
   const PRODUCT_ID = v1();
+  const valueList = document.querySelectorAll('input').map((el) => el.value);
+
+  useEffect(() => {
+    if (click) {
+      console.log('상품명:', valueList[0]);
+      console.log('상품 코드:', PRODUCT_ID);
+      console.log('상품 소개 정보:', valueList[1]);
+    }
+  }, [click, valueList, PRODUCT_ID]);
+
   return (
     <>
       <Grid isFlex borderBottom>
@@ -35,4 +45,4 @@ const ProductName = () => {
   );
 };
 
-export default ProductName;
+export default ProductInfo;

@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Category, FilterTag, ProductInfo, ProductRest, ProductImage, FooterBtn } from 'components';
 import { Grid, Text } from 'common';
 
 const BasicInfo = () => {
+  const [click, setClick] = useState(0);
+
   return (
     <>
       <Grid width='60rem' border>
@@ -10,14 +12,14 @@ const BasicInfo = () => {
           <Text bold>상품 기본 정보</Text>
         </Grid>
 
-        <Category />
-
-        <FilterTag />
-        <ProductInfo />
-        <ProductImage />
-        <ProductRest />
+        <Category click={click} />
+        <FilterTag click={click} />
+        <ProductInfo click={click} />
+        <ProductImage click={click} />
+        <ProductRest click={click} />
       </Grid>
-      <FooterBtn params='productoption' />
+
+      <FooterBtn params='productoption' setClick={setClick} />
     </>
   );
 };

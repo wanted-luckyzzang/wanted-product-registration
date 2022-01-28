@@ -1,11 +1,15 @@
-import React, { useState, useCallback, useRef } from 'react';
+import React, { useState, useCallback, useRef, useEffect } from 'react';
 import CATEGORY from 'utils/categoryData';
 import { Grid, Text, Button } from 'common';
 import { bg, border } from 'styles/palette';
 
-const Category = () => {
+const Category = ({ click }) => {
   const [selectedTag, setSelectedTag] = useState([]);
   const inputRef = useRef(null);
+
+  useEffect(() => {
+    click && console.log('선택된 카테고리:', selectedTag);
+  }, [click, selectedTag]);
 
   const onDeleteTag = useCallback(
     (deleteTag, e) => {
@@ -35,7 +39,7 @@ const Category = () => {
     <Grid isFlex column borderBottom>
       <Grid isFlex height='20rem'>
         <Grid width='10rem' bg={bg.field} padding='1rem 0 0 1rem'>
-          카테고리 *
+          <Text bold>카테고리 *</Text>
         </Grid>
         <Grid isFlex padding='0.8rem'>
           <Grid width='50%' border padding='0.8rem 1.2rem' margin='0 1rem 0 0' _ref={inputRef} scrollY>

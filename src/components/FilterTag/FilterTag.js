@@ -1,13 +1,17 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useCallback, useRef, useState, useEffect } from 'react';
 import { SearchTag, SelectedTag } from './index';
 import { Grid, Button, Text, Input } from 'common';
 import { bg, text } from 'styles/palette';
 
-const FilterTag = () => {
+const FilterTag = ({ click }) => {
   const [tagClick, setTagClick] = useState(0);
   const [selectedTag, setSelectedTag] = useState([]);
   const [searchWord, setSearchWord] = useState('');
   const inputRef = useRef(null);
+
+  useEffect(() => {
+    click && console.log('검색된 태그:', selectedTag);
+  }, [click, selectedTag]);
 
   const focusInput = useCallback((event) => {
     event.target.placeholder = '검색어를 입력하세요.';
