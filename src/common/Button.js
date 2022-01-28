@@ -17,7 +17,6 @@ export default function Button(props) {
     sx,
     borderBottom,
     borderTop,
-    justify,
   } = props;
 
   const styles = {
@@ -31,7 +30,6 @@ export default function Button(props) {
     bold,
     borderBottom,
     borderTop,
-    justify,
   };
 
   return (
@@ -67,16 +65,15 @@ Button.defaultProps = {
   children: null,
   bg: '#fff',
   color: '#000',
-  type: '',
+  type: 'button',
   border: '1px solid #e3e3e3',
-  justify: 'center',
   _onClick: () => {},
 };
 
 const ElButton = styled.button`
   display: flex;
   align-items: center;
-  justify-content: ${(props) => props.justify}
+  justify-content: center;
   width: ${(props) => props.width};
   height: ${(props) => props.height};
   ${(props) => props.margin && `margin: ${props.margin};`};
