@@ -1,24 +1,24 @@
 import React from "react";
+import GlobalStyle from "styles/GlobalStyle";
+import { Category } from "pages/Category";
+import "styles/App.css";
+import FilterTag from "components/Filtertag";
+import ImageUpload from "pages/ImageUpload";
+import { SalesPeriodSetting } from "pages/SalesPeriodSetting";
 import { Routes, Route } from "react-router-dom";
 
-import "styles/App.css";
-import GlobalStyle from "styles/GlobalStyle";
-
-import FilterTag from "components/Filtertag";
-import SalesPeriodSetting from "pages/SalesPeriodSetting";
-import Container from "common/Container";
-
 function App() {
-	return (
-		<>
-			<GlobalStyle />
-			<Routes>
-				<Route path="/" element={<Container />} />
-				<Route path="/period" element={<SalesPeriodSetting />} />
-				<Route path="/filtertag" element={<FilterTag />} />
-			</Routes>
-		</>
-	);
+  return (
+    <>
+      <GlobalStyle />
+      <Routes>
+        <Route path="/" element={<Category />} />
+        <Route path="/period" element={<SalesPeriodSetting />} />
+        <Route path="/filtertag" element={<FilterTag />} />
+        <Route path="/imageupload" element={<ImageUpload />} />
+      </Routes>
+    </>
+  );
 }
 
 export default App;
