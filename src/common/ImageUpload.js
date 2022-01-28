@@ -80,13 +80,13 @@ const ImageUpload = ({ preview }) => {
             <>
               <Button
                 bg="#efefef"
-                border="#36306c"
+                border="#36306e"
                 color="black"
                 width="12rem"
                 height="3rem"
                 _onClick={addPreviewImageButton}
               >
-                <Text size="2rem">+ 이미지첨부</Text>
+                <Text size="1rem">+ 이미지첨부</Text>
               </Button>
               <Input
                 type="file"
