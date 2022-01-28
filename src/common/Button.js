@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import icon from 'Assets/deleteIcon.png';
+import icon from "Assets/deleteIcon.png";
 import { bg, text, border } from "styles/palette";
 
 export default function Button(props) {
@@ -14,8 +14,10 @@ export default function Button(props) {
 		_onClick,
 		fontWeight,
 		bold,
-    type,
-    sx,
+		type,
+		sx,
+		borderBottom,
+		borderTop,
 	} = props;
 
 	const styles = {
@@ -27,57 +29,62 @@ export default function Button(props) {
 		border,
 		fontWeight,
 		bold,
+		borderBottom,
+		borderTop,
 	};
 
-  return (
-    <>
-      {type === 'button' ? (
-        <ElButton {...styles} type={type} onClick={_onClick}>
-          {children}
-        </ElButton>
-      ) : (
-        <div
-          style={{
-            width: '1.3rem',
-            height: '1.3rem',
-            borderRadius: '50%',
-            border: '1px solid #e3e3e3',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            cursor: 'pointer',
-            ...sx,
-          }}
-          onClick={onClick}
-        >
-          <img src={icon} style={{ width: '1.1rem' }} />
-        </div>
-      )}
-    </>
-  );
+	return (
+		<>
+			{type === "button" ? (
+				<ElButton {...styles} type={type} onClick={_onClick}>
+					{children}
+				</ElButton>
+			) : (
+				<div
+					style={{
+						width: "1.3rem",
+						height: "1.3rem",
+						borderRadius: "50%",
+						border: "1px solid #e3e3e3",
+						display: "flex",
+						justifyContent: "center",
+						alignItems: "center",
+						cursor: "pointer",
+						...sx,
+					}}
+					onClick={_onClick}
+				>
+					<img src={icon} style={{ width: "1.1rem" }} />
+				</div>
+			)}
+		</>
+	);
 }
 
 Button.defaultProps = {
-  width: '100%',
-  height: '40px',
-  children: null,
-  bg: '#fff',
-  color: '#000',
-  type: 'button',
-  border: 'red',
-  _onClick: () => {},
+	width: "100%",
+	height: "40px",
+	children: null,
+	bg: "#fff",
+	color: "#000",
+	type: "button",
+	border: "1px solid #e3e3e3",
+	_onClick: () => {},
 };
 
 const ElButton = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: ${(props) => props.width};
-  height: ${(props) => props.height};
-  ${(props) => (props.margin ? `margin: ${props.margin};` : '')}
-  ${(props) => (props.color ? `color: ${props.color};` : '')}
-  ${(props) => (props.bg ? `background: ${props.bg};` : '')};
-  ${(props) => (props.border ? `border: 1px solid ${props.border};` : '')}
-  border-radius: 4px;
-  font-weight: ${(props) => (props.bold ? "700" : "400")};
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: ${(props) => props.width};
+	height: ${(props) => props.height};
+	${(props) => (props.margin ? `margin: ${props.margin};` : "")}
+	${(props) => (props.color ? `color: ${props.color};` : "")}
+  ${(props) => (props.bg ? `background: ${props.bg};` : "")};
+	${(props) => (props.border ? `border: ${props.border};` : "")}
+	border-radius: 4px;
+	font-weight: ${(props) => (props.bold ? "700" : "400")};
+	margin: ${(props) => props.margin};
+	${(props) => (props.border ? `border-bottom: ${props.borderBottom};` : "")}
+	${(props) => (props.border ? `border-top: ${props.borderTop};` : "")}
 `;
