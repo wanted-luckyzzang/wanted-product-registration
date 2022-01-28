@@ -6,17 +6,29 @@ import DateRangeInputPicker from "utils/pickers/DateRangePicker";
 export const SalesPeriodSetting = (props) => {
 	const [selectedShowingOption, setSelectedShowingOption] = useState();
 	const [selectedSellingOption, setSelectedSellingOption] = useState();
+	const [IsSelectedSetForShowing, setIsSelectedSetForShowing] = useState(true);
 
 	const SelectShowingBtnHandler = (e) => {
 		setSelectedShowingOption(e.target.value);
+		// if (e.target.value === "setForShowing") {
+		// 	setIsSelectedSetForShowing = true;
+		// }
 	};
+
 	const SelectSellingBtngHandler = (e) => {
 		setSelectedSellingOption(e.target.value);
 	};
-
 	const submitHandler = (e) => {
 		e.preventDefault();
 		console.log(e);
+		console.log(e.target[0].checked && e.target[0].value);
+		console.log(e.target[1].checked && e.target[1].value);
+		console.log(e.target[2].checked && e.target[2].value);
+		console.log(e.target[3].value, e.target[4].value);
+		console.log(e.target[5].checked && e.target[5].value);
+		console.log(e.target[6].checked && e.target[6].value);
+		console.log(e.target[7].checked && e.target[7].value);
+		console.log(e.target[8].value, e.target[9].value);
 	};
 
 	return (
@@ -100,7 +112,7 @@ export const SalesPeriodSetting = (props) => {
 						<label>판매 기간 설정</label>
 					</div>
 					<DateRangeInputPicker />
-					<button>저장하기</button>
+					<button type="submit">저장하기</button>
 				</Grid>
 			</Grid>
 		</Grid>
