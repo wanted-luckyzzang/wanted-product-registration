@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Grid, Button, Text, Input } from "common";
 
@@ -6,10 +6,9 @@ const NoticeInfo = () => {
 	return (
 		<>
 			<Grid
-				marginTop="2rem"
+				margin="1rem"
 				width="auto"
-				bg="#d3d3d36b"
-				height="35rem"
+				height="auto"
 				column
 				isFlex
 				align="center"
@@ -22,7 +21,7 @@ const NoticeInfo = () => {
 						<button
 							style={{
 								border: "1px solid #e3e3e3",
-								width: "3rem",
+								width: "4rem",
 								height: "2rem",
 							}}
 						>
@@ -109,24 +108,13 @@ const NoticeInfo = () => {
 							width="10rem"
 							bg="transparent"
 							color="#352f6e"
-							border="1px solid #ebebeb"
+							border="#ebebeb"
 							bold="700"
 						>
 							+ 항목 추가
 						</Button>
 					</div>
 				</Main>
-				<Footer>
-					<Button
-						width="100%"
-						bg="transparent"
-						color="#352f6e"
-						border="#352f6e"
-						fontWeight="bold"
-					>
-						+ 정보고시 추가
-					</Button>
-				</Footer>
 			</Grid>
 		</>
 	);
@@ -151,10 +139,6 @@ const InfoOptions = styled.div`
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: 0.7rem;
-`;
-
-const Footer = styled.div`
-	width: 95%;
 `;
 
 export default NoticeInfo;

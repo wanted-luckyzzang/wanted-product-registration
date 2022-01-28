@@ -36,21 +36,13 @@ const ElText = styled.p`
 	font-weight: ${(props) => (props.bold ? "700" : "400")};
 	color: ${(props) => props.color};
 	line-height: ${(props) => props.lineHeight};
+	margin: ${(props) => props.margin};
 `;
 const ElSpan = styled.span`
-<<<<<<< HEAD
 	font-size: ${(props) => props.size};
 	font-weight: ${(props) => (props.bold ? "700" : "400")};
 	color: ${(props) => props.color};
 	${(props) => `text-align: ${props.textAlign}`};
 	line-height: ${(props) => props.lineHeight};
 	margin: ${(props) => props.margin};
-=======
-  font-size: ${(props) => props.size};
-  font-weight: ${(props) => (props.bold ? "700" : "400")};
-  color: ${(props) => props.color};
-  ${(props) => `text-align: ${props.textAlign}`};
-  line-height: ${(props) => props.lineHeight};
-  margin: ${(props) => props.margin};
->>>>>>> f9cbd4b278cc7fdb650a249447b8584e2f9d2f7d
 `;

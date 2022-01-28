@@ -7,14 +7,14 @@ const PreOrderShipping = (props) => {
 	return (
 		<>
 			<Grid isFlex column height="20rem" width="auto">
-				<Grid isFlex height="10rem" width="auto" borderBottom>
+				<Grid isFlex height="10rem" width="auto" borderBottom="1px solid black">
 					<Grid width="8rem" borderRight padding="0.5rem">
 						<OptionTitle>사용자 배송일</OptionTitle>
 						<OptionTitle>출발일 지정</OptionTitle>
 					</Grid>
 					<Toggle />
 				</Grid>
-				<Grid isFlex height="10rem" width="auto" borderBottom>
+				<Grid isFlex height="10rem" width="auto" borderBottom="1px solid black">
 					<Grid width="8rem" borderRight padding="0.5rem">
 						<OptionTitle>방문 수령</OptionTitle>
 					</Grid>
@@ -52,6 +52,7 @@ const PreOrderShipping = (props) => {
 
 const OptionTitle = styled.div`
 	font-size: 0.9rem;
+	margin-bottom: 0.3rem;
 `;
 
 const Options = styled.div`

@@ -17,6 +17,7 @@ const OfferThankCard = (props) => {
 
 const OptionTitle = styled.div`
 	font-size: 0.9rem;
+	margin-bottom: 0.3rem;
 `;
 
 export default OfferThankCard;
