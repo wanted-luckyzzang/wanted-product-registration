@@ -29,12 +29,12 @@ npm run start
 ├── assets
 │   └── deleteIcon.png	// x 버튼 이미지
 ├── common
-│   ├── Button.js	//	Button styled 컴포넌트
-│   ├── Checkbox.js	//	Checkbox styled 컴포넌트
-│   ├── Grid.js		//	Grid styled 컴포넌트
-│   ├── Input.js	//	Input styled 컴포넌트
-│   ├── Switch.js	//	Switch styled 컴포넌트
-│   ├── Text.js		//	Text styled 컴포넌트
+│   ├── Button.js	// Button styled 컴포넌트
+│   ├── Checkbox.js	// Checkbox styled 컴포넌트
+│   ├── Grid.js		// Grid styled 컴포넌트
+│   ├── Input.js	// Input styled 컴포넌트
+│   ├── Switch.js	// Switch styled 컴포넌트
+│   ├── Text.js		// Text styled 컴포넌트
 │   └── index.js
 ├── components		// 프로젝트 구성 컴포넌트
 │   ├── Category.js
@@ -61,7 +61,7 @@ npm run start
 │   ├── SubHeader.js
 │   └── index.js
 ├── index.js
-├── pages		//프로젝트 구성 페이지
+├── pages		// 프로젝트 구성 페이지
 │   ├── BasicInfo.js
 │   ├── ProductImage.js
 │   ├── ProductNoticeInfo.js
@@ -69,14 +69,14 @@ npm run start
 │   ├── ProductsPeriodSetting.js
 │   └── index.js
 ├── styles
-│   ├── App.css		//	css 초기 설정
+│   ├── App.css		// css 초기 설정
 │   └── palette.js	// 색 설정 값
 └── utils
     ├── categoryData.js			// category Data 자료
     ├── pickers
     │   ├── DatePicker.js
     │   └── DateRangePicker.js
-    └── tagData.js				// filter tag Data 자료
+    └── tagData.js			// filter tag Data 자료
 ```
 
 ### ✅ 과제에 제시된 요구사항 모두 구현
