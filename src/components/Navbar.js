@@ -35,7 +35,11 @@ const Navbar = () => {
           >
             상품 옵션
           </Button>
-          <Button border="none" borderBottom="1px solid #E3E3E3">
+          <Button
+            border="none"
+            borderBottom="1px solid #E3E3E3"
+            _onClick={() => navigate(`/imageselect`)}
+          >
             상품 등록
           </Button>
           <Button
