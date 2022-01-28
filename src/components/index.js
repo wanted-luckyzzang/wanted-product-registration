@@ -1,3 +1,4 @@
+
 import Category from "./Category";
 import ImageUpload from "./ImageUpload";
 import Layout from "./Layout";
@@ -7,6 +8,7 @@ import ProductInfo from "./ProductInfo";
 import ProductRest from "./ProductRest";
 import Navbar from "./Navbar";
 import BigOption from "./BigOption";
+import SmallOption from './SmallOption';
 
 export {
 	Category,
@@ -18,4 +20,6 @@ export {
 	ProductRest,
 	Navbar,
 	BigOption,
+  SmallOption,
+
 };
