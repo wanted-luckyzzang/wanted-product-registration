@@ -5,7 +5,7 @@ import { bg } from 'styles/palette';
 
 const ProductInfo = ({ click }) => {
   const PRODUCT_ID = v1();
-  const valueList = document.querySelectorAll('input').map((el) => el.value);
+  const valueList = document.querySelectorAll('input').forEach((el) => el.value);
 
   useEffect(() => {
     if (click) {

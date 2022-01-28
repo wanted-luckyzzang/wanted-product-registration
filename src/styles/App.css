@@ -43,7 +43,7 @@ input {
 
 input:active,
 input:focus {
-  border: none;
+  border: #eee;
   outline: none;
 }
 
