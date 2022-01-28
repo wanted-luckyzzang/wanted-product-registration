@@ -37,7 +37,7 @@ const BigOption = () => {
       <Grid isFlex justify="center" width="100%">
         <Button
           type="button"
-          border="#363166"
+          border="#36306e"
           width="100%"
           margin="1rem 0 0 0"
           _onClick={addOption}
