@@ -26,18 +26,18 @@ export default function Text(props) {
 	);
 }
 Text.defaultProps = {
-  size: '14px',
-  bold: false,
-  color: text.default,
-  textAlign: 'initial',
-  margin: '',
+	size: "14px",
+	bold: false,
+	color: text.default,
+	textAlign: "initial",
+	margin: "",
 };
 const ElText = styled.p`
-  font-size: ${(props) => props.size};
-  font-weight: ${(props) => (props.bold ? '700' : '400')};
-  color: ${(props) => props.color};
-  line-height: ${(props) => props.lineHeight};
-  margin: ${(props) => props.margin};
+	font-size: ${(props) => props.size};
+	font-weight: ${(props) => (props.bold ? "700" : "400")};
+	color: ${(props) => props.color};
+	line-height: ${(props) => props.lineHeight};
+	margin: ${(props) => props.margin};
 `;
 const ElSpan = styled.span`
 	font-size: ${(props) => props.size};

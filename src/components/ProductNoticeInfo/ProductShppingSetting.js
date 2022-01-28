@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Grid, Toggle } from "common";
+import { Grid, Switch } from "common";
 import DateRangeInputPicker from "utils/pickers/DateRangePicker";
 import DatePicker from "utils/pickers/DatePicker";
 
@@ -12,13 +12,15 @@ const PreOrderShipping = (props) => {
 						<OptionTitle>사용자 배송일</OptionTitle>
 						<OptionTitle>출발일 지정</OptionTitle>
 					</Grid>
-					<Toggle />
+					<SwithBox>
+						<Switch />
+					</SwithBox>
 				</Grid>
 				<Grid isFlex height="10rem" width="auto" borderBottom="1px solid black">
 					<Grid width="8rem" borderRight padding="0.5rem">
 						<OptionTitle>방문 수령</OptionTitle>
 					</Grid>
-					<Toggle />
+					<Switch />
 				</Grid>
 				<Grid isFlex height="25rem" width="auto">
 					<Grid width="8rem" borderRight padding="0.5rem">
@@ -27,7 +29,7 @@ const PreOrderShipping = (props) => {
 					</Grid>
 					<Grid width="40rem" isFlex column margin="1rem 1.5rem">
 						<Options>
-							<Toggle />
+							<Switch />
 						</Options>
 						<Grid isFlex margin="1rem 0">
 							<Options>주문 시간</Options>
@@ -51,12 +53,8 @@ const PreOrderShipping = (props) => {
 };
 
 const OptionTitle = styled.div`
-<<<<<<< HEAD
 	font-size: 0.9rem;
 	margin-bottom: 0.3rem;
-=======
-  font-size: 0.9rem;
->>>>>>> 463f744bc04d437fc30ab9d474adb33cfd89f73a
 `;
 
 const Options = styled.div`
@@ -64,6 +62,11 @@ const Options = styled.div`
 	margin-right: 1rem;
 	line-height: 2.5rem;
 	height: 1rem;
+`;
+
+const SwithBox = styled.div`
+	width: 3rem;
+	height: 3rem;
 `;
 
 export default PreOrderShipping;
