@@ -3,7 +3,12 @@ import { Grid } from 'common';
 import DateRangeInputPicker from 'utils/pickers/DateRangePicker';
 import { bg } from 'styles/palette';
 
-const ProductPeriod = ({ type, selectedOption, selectBtnHandler }) => {
+const ProductPeriod = ({
+  type,
+  setPeriod,
+  selectedOption,
+  selectBtnHandler,
+}) => {
   let title, label1, label2, label3;
   switch (type) {
     case 'product-sale':
@@ -23,24 +28,39 @@ const ProductPeriod = ({ type, selectedOption, selectBtnHandler }) => {
     marginBottom: '1rem',
   };
   return (
-    <Grid isFlex height='13rem' borderBottom>
-      <Grid width='10rem' borderRight padding='1rem 0 0 1rem' bg={bg.field}>
+    <Grid isFlex height="13rem" borderBottom>
+      <Grid width="10rem" borderRight padding="1rem 0 0 1rem" bg={bg.field}>
         {title}
       </Grid>
-      <Grid width='50rem' borderRight isFlex column padding='1rem 0 0 1rem'>
+      <Grid width="50rem" borderRight isFlex column padding="1rem 0 0 1rem">
         <div style={style}>
-          <input type='radio' value='noLimitForShowing' checked={selectedOption === 'noLimitForShowing'} onChange={selectBtnHandler} />
+          <input
+            type="radio"
+            value="noLimitForShowing"
+            checked={selectedOption === 'noLimitForShowing'}
+            onChange={selectBtnHandler}
+          />
           <label>{label1}</label>
         </div>
         <div style={style}>
-          <input type='radio' value='NoneForShowing' checked={selectedOption === 'NoneForShowing'} onChange={selectBtnHandler} />
+          <input
+            type="radio"
+            value="NoneForShowing"
+            checked={selectedOption === 'NoneForShowing'}
+            onChange={selectBtnHandler}
+          />
           <label>{label2}</label>
         </div>
         <div style={style}>
-          <input type='radio' value='setForShowing' checked={selectedOption === 'setForShowing'} onChange={selectBtnHandler} />
+          <input
+            type="radio"
+            value="setForShowing"
+            checked={selectedOption === 'setForShowing'}
+            onChange={selectBtnHandler}
+          />
           <label>{label3}</label>
         </div>
-        <DateRangeInputPicker />
+        <DateRangeInputPicker setPeriod={setPeriod} />
       </Grid>
     </Grid>
   );

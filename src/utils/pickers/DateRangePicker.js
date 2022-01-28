@@ -4,7 +4,7 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DateRangePicker from '@mui/lab/DateRangePicker';
 
-export default function DateRangeInputPicker() {
+function DateRangeInputPicker({ setPeriod }) {
   const [value, setValue] = React.useState([null, null]);
 
   const styled = {
@@ -17,7 +17,9 @@ export default function DateRangeInputPicker() {
       border: '1px solid rgb(215, 215, 215)',
     },
   };
-
+  React.useEffect(() => {
+    setPeriod(value);
+  });
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <DateRangePicker
@@ -27,12 +29,22 @@ export default function DateRangeInputPicker() {
         onChange={(newValue) => setValue(newValue)}
         renderInput={(startProps, endProps) => (
           <React.Fragment>
-            <input style={styled.inputSytle} ref={startProps.inputRef} {...startProps.inputProps} />
+            <input
+              style={styled.inputSytle}
+              ref={startProps.inputRef}
+              {...startProps.inputProps}
+            />
             <Box sx={{ mx: 1 }}> ~ </Box>
-            <input style={styled.inputSytle} ref={endProps.inputRef} {...endProps.inputProps} />
+            <input
+              style={styled.inputSytle}
+              ref={endProps.inputRef}
+              {...endProps.inputProps}
+            />
           </React.Fragment>
         )}
       />
     </LocalizationProvider>
   );
 }
+
+export default React.memo(DateRangeInputPicker);
