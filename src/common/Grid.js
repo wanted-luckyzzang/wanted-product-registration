@@ -23,7 +23,7 @@ const Grid = (props) => {
     scrollY,
     children,
     _onSubmit,
-    checkGrid,
+    gridType,
   } = props;
 
   const styles = {
@@ -47,7 +47,7 @@ const Grid = (props) => {
     children,
   };
 
-  return checkGrid === 'form' ? (
+  return gridType === 'form' ? (
     <ElForm {...styles} onSubmit={_onSubmit}>
       {children}
     </ElForm>

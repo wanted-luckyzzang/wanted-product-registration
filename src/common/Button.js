@@ -1,18 +1,33 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 import icon from 'Assets/deleteIcon.png';
-import { bg, text, border } from 'styles/palette';
+import { bg, text, border } from "styles/palette";
 
 export default function Button(props) {
-  const { width, height, margin, bg, color, border, children, _onClick, type, sx, onClick } = props;
+	const {
+		width,
+		height,
+		margin,
+		bg,
+		color,
+		border,
+		children,
+		_onClick,
+		fontWeight,
+		bold,
+    type,
+    sx,
+	} = props;
 
-  const styles = {
-    width,
-    height,
-    margin,
-    bg,
-    color,
-    border,
-  };
+	const styles = {
+		width,
+		height,
+		margin,
+		bg,
+		color,
+		border,
+		fontWeight,
+		bold,
+	};
 
   return (
     <>
@@ -64,4 +79,5 @@ const ElButton = styled.button`
   ${(props) => (props.bg ? `background: ${props.bg};` : '')};
   ${(props) => (props.border ? `border: 1px solid ${props.border};` : '')}
   border-radius: 4px;
+  font-weight: ${(props) => (props.bold ? "700" : "400")};
 `;
