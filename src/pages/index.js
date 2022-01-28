@@ -1,6 +1,4 @@
 import BasicInfo from './BasicInfo';
-import SalesPeriodSetting from './SalesPeriodSetting';
-import TogglePage from './TogglePage';
 import ProductsPeriodSetting from './ProductsPeriodSetting';
 import ProductNoticeInfo from './ProductsPeriodSetting';
 import ProductOption from './ProductOption';
@@ -13,3 +11,4 @@ export {
   ProductNoticeInfo,
   ProductOption,
 };
+export { BasicInfo, ProductsPeriodSetting, ProductNoticeInfo };

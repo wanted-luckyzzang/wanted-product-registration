@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import icon from 'assets/deleteIcon.png';
-import { bg, text, border } from 'styles/palette';
 
 export default function Button(props) {
   const {
@@ -80,9 +79,10 @@ const ElButton = styled.button`
   justify-content: ${(props) => props.justify}
   width: ${(props) => props.width};
   height: ${(props) => props.height};
-  ${(props) => props.margin && `margin: ${props.margin};`}
-  ${(props) => props.color && `color: ${props.color};`}
+  ${(props) => props.margin && `margin: ${props.margin};`};
+  ${(props) => props.color && `color: ${props.color};`};
   ${(props) => props.bg && `background: ${props.bg};`};
-  ${(props) => props.border && `border: 1px solid ${props.border};`}
+  ${(props) => props.border && `border: 1px solid ${props.border};`};
   border-radius: 4px;
+  font-weight: ${(props) => (props.bold ? '700' : '400')};
 `;
