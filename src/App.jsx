@@ -1,13 +1,13 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
-
-import "styles/App.css";
 import GlobalStyle from "styles/GlobalStyle";
-
+import { Category } from "pages/Category";
+import "styles/App.css";
 import FilterTag from "components/Filtertag";
 import ProductsPeriodSetting from "pages/ProductsPeriodSetting";
 import Container from "common/Container";
 import ProductNoticeInfo from "pages/ProductNoticeInfo";
+import ImageUpload from "pages/ImageUpload";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
 	return (
@@ -18,6 +18,7 @@ function App() {
 				<Route path="/period" element={<ProductsPeriodSetting />} />
 				<Route path="/filtertag" element={<FilterTag />} />
 				<Route path="/noticeInfo" element={<ProductNoticeInfo />} />
+        <Route path="/imageupload" element={<ImageUpload />} />
 			</Routes>
 		</>
 	);
