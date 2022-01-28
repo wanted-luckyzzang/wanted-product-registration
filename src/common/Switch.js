@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
+import { bg } from 'styles/palette';
 
 const Switch = () => {
   const [checked, setChecked] = useState(false);
@@ -19,17 +20,21 @@ const Slider = styled.span`
   left: 0;
   right: 0;
   bottom: 0;
-  background: #ccc;
+  transition: 0.4s;
+  border-radius: 2.2rem;
+  background: ${(props) => (props.toggled ? bg.switchSlide : bg.switchBeforeSlide)};
 
   &::before {
     position: absolute;
     content: '';
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background: #fff;
-
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    left: -0.4rem;
+    bottom: -0.2rem;
+    background: ${(props) => (props.toggled ? bg.switchBtn : bg.switchBeforeBtn)};
+    transition: 0.4s;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     ${(props) =>
       props.toggled &&
       css`
@@ -41,10 +46,9 @@ const Slider = styled.span`
 const ElSwitch = styled.label`
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 2.4rem;
+  height: 1rem;
   margin: 0 auto;
-  background: red;
 `;
 
 const ToggleInput = styled.input`
