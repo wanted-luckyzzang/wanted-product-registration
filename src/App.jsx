@@ -8,11 +8,9 @@ function App() {
   return (
     <Layout>
       <Routes>
-        {/* <Route path='/' element={<TogglePage />} /> */}
-        <Route path='/' element={<BasicInfo />} />
-        <Route path='/filtertag' element={<FilterTag />} />
+        {/* <Route path='/' element={<SalesPeriodSetting />} /> */}
+        <Route path='/basicinfo' element={<BasicInfo />} />
         <Route path='/noticeInfo' element={<ProductNoticeInfo />} />
-        <Route path='/imageupload' element={<ImageUpload />} />
       </Routes>
     </Layout>
   );
