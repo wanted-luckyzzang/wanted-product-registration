@@ -5,8 +5,9 @@ import "styles/App.css";
 import GlobalStyle from "styles/GlobalStyle";
 
 import FilterTag from "components/Filtertag";
-import SalesPeriodSetting from "pages/SalesPeriodSetting";
+import ProductsPeriodSetting from "pages/ProductsPeriodSetting";
 import Container from "common/Container";
+import ProductNoticeInfo from "pages/ProductNoticeInfo";
 
 function App() {
 	return (
@@ -14,8 +15,9 @@ function App() {
 			<GlobalStyle />
 			<Routes>
 				<Route path="/" element={<Container />} />
-				<Route path="/period" element={<SalesPeriodSetting />} />
+				<Route path="/period" element={<ProductsPeriodSetting />} />
 				<Route path="/filtertag" element={<FilterTag />} />
+				<Route path="/noticeInfo" element={<ProductNoticeInfo />} />
 			</Routes>
 		</>
 	);
