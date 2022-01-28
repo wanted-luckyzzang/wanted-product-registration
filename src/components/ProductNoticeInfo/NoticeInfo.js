@@ -6,9 +6,10 @@ const NoticeInfo = () => {
 	return (
 		<>
 			<Grid
-				margin="1rem"
+				marginTop="2rem"
 				width="auto"
-				height="auto"
+				bg="#d3d3d36b"
+				height="35rem"
 				column
 				isFlex
 				align="center"
@@ -21,7 +22,7 @@ const NoticeInfo = () => {
 						<button
 							style={{
 								border: "1px solid #e3e3e3",
-								width: "4rem",
+								width: "3rem",
 								height: "2rem",
 							}}
 						>
@@ -108,13 +109,24 @@ const NoticeInfo = () => {
 							width="10rem"
 							bg="transparent"
 							color="#352f6e"
-							border="#ebebeb"
+							border="1px solid #ebebeb"
 							bold="700"
 						>
 							+ 항목 추가
 						</Button>
 					</div>
 				</Main>
+				<Footer>
+					<Button
+						width="100%"
+						bg="transparent"
+						color="#352f6e"
+						border="1.5px solid #352f6e"
+						fontWeight="bold"
+					>
+						+ 정보고시 추가
+					</Button>
+				</Footer>
 			</Grid>
 		</>
 	);

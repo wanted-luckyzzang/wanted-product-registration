@@ -51,8 +51,12 @@ const PreOrderShipping = (props) => {
 };
 
 const OptionTitle = styled.div`
+<<<<<<< HEAD
 	font-size: 0.9rem;
 	margin-bottom: 0.3rem;
+=======
+  font-size: 0.9rem;
+>>>>>>> 463f744bc04d437fc30ab9d474adb33cfd89f73a
 `;
 
 const Options = styled.div`
