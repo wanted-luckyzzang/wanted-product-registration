@@ -21,6 +21,7 @@ const Grid = (props) => {
     borderRight,
     scrollY,
     children,
+    _ref,
     _onSubmit,
     gridType,
     marginBottom,
@@ -40,6 +41,7 @@ const Grid = (props) => {
     bg,
     radius,
     border,
+    _ref,
     borderBottom,
     borderRight,
     scrollY,
@@ -51,7 +53,9 @@ const Grid = (props) => {
       {children}
     </ElForm>
   ) : (
-    <ElGrid {...styles}>{children}</ElGrid>
+    <ElGrid {...styles} ref={_ref}>
+      {children}
+    </ElGrid>
   );
 };
 Grid.defaultProps = {
@@ -66,6 +70,7 @@ Grid.defaultProps = {
   align: '',
   bg: '#fff',
   radius: '',
+  _ref: null,
   border: false,
   borderBottom: false,
   borderRight: false,
