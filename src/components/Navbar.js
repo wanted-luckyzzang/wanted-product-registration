@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import { Grid, Button } from 'common';
 import { useNavigate } from 'react-router';
 const Navbar = () => {
@@ -11,9 +10,6 @@ const Navbar = () => {
         borderBottom="1px solid #E3E3E3"
         margin="0"
       >
-        <LogoLeftHeader>
-          <Img src="https://www.sirloin.co.kr/data/skin/front/sirloin_2_6_0v/img/sirloin/logo.png" />
-        </LogoLeftHeader>
         <div
           style={{
             display: 'flex',
@@ -50,13 +46,5 @@ const Navbar = () => {
     </>
   );
 };
-const LogoLeftHeader = styled.header`
-  height: 3rem;
-  border-bottom: 1px solid #e3e3e3;
-`;
-const Img = styled.img`
-  width: 8rem;
-  padding: 0.5rem;
-  margin-left: 1rem;
-`;
+
 export default Navbar;
