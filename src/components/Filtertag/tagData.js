@@ -10,6 +10,10 @@ const TAG_LIST = [
   '베스트',
   '파리바게트',
   '뚜레쥬르',
+  '보쌈',
+  '베스트',
+  '파리바게트',
+  '뚜레쥬르',
 ];
 
 export default TAG_LIST;

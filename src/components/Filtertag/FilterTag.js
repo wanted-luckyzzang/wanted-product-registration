@@ -4,17 +4,21 @@ import { text } from 'styles/palette';
 import Input from 'common/Input';
 import { bg } from 'styles/palette';
 import SearchTag from './SearchTag';
+import SelectedTag from './SelectedTag';
 
 const FilterTag = () => {
-  const [filterClick, setFilterClick] = useState(0);
+  const [tagClick, setTagClick] = useState(0);
+  const [selectedTag, setSelectedTag] = useState([]);
 
-  const test = (event) => {
+  const focusInput = (event) => {
     event.target.placeholder = '검색어를 입력하세요.';
-    setFilterClick(1);
+    setTagClick(1);
   };
-  const test2 = (event) => {
+  const blurInput = (event) => {
     event.target.placeholder = '필터태그를 검색해 주세요.';
-    setFilterClick(0);
+    setTimeout(() => {
+      setTagClick(0);
+    }, 100);
   };
 
   return (
@@ -41,8 +45,8 @@ const FilterTag = () => {
               width="80%"
               height="80%"
               padding=".5rem"
-              _onFocus={test}
-              _onBlur={test2}
+              _onFocus={focusInput}
+              _onBlur={blurInput}
             />
             <Button
               width="20%"
@@ -54,11 +58,22 @@ const FilterTag = () => {
               검색
             </Button>
           </Grid>
-          {filterClick === 1 && <SearchTag />}
+          {selectedTag.length !== 0 && (
+            <SelectedTag
+              selectedTag={selectedTag}
+              setSelectedTag={setSelectedTag}
+            />
+          )}
+          {tagClick === 1 && (
+            <SearchTag
+              selectedTag={selectedTag}
+              setSelectedTag={setSelectedTag}
+            />
+          )}
         </Grid>
       </Grid>
     </Grid>
   );
 };
 
-export default FilterTag;
+export default React.memo(FilterTag);
