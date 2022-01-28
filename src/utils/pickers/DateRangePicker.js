@@ -9,8 +9,8 @@ export default function DateRangeInputPicker() {
 
   const styled = {
     inputSytle: {
-      width: '170px',
-      height: '35px',
+      width: '13rem',
+      height: '3rem',
       textAlign: 'center',
       fontWeight: '600',
       textTransform: 'uppercase',
