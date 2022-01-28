@@ -14,8 +14,8 @@ const SelectedTag = ({ selectedTag, setSelectedTag }) => {
   );
 
   return (
-    <Grid>
-      <Grid padding="1rem 0 0 .5rem">
+    <Grid border padding=".5rem">
+      <Grid padding=".5rem 0 .5rem .5rem">
         <Text>지정된 필터 태그</Text>
       </Grid>
       <Grid isFlex isWrap>

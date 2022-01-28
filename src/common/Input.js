@@ -2,13 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Input = (props) => {
-  const { width, padding, margin, type, checked, placeholder, none, multiple, _ref, _onChange, _onFocus, _onBlur } = props;
+  const { width, padding, margin, type, checked, placeholder, none, multiple, _ref, _onChange, _onFocus, _onBlur, textIndent } = props;
 
   const styles = {
     width,
     padding,
     margin,
     none,
+    textIndent,
   };
 
   return (
@@ -46,8 +47,9 @@ const ElInput = styled.input`
   margin: ${(props) => props.margin};
   border: 1px solid #ebebeb;
   border-radius: 4px;
-  ${(props) => props.none && 'display: none;'}
-  ${(props) => (props.height ? `height: ${props.height};` : '40px')}
+  ${(props) => (props.none ? 'display: none;' : '')};
+  ${(props) => (props.height ? `height: ${props.height};` : '40px')};
+  ${(props) => `text-indent: ${props.textIndent};`};
 `;
 
 export default Input;

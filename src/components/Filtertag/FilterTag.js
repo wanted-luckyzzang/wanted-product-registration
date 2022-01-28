@@ -31,60 +31,55 @@ const FilterTag = () => {
   }, []);
 
   return (
-    <Grid width="40rem" margin="2rem auto 2rem" border isFlex column>
-      <Grid height="5rem" isFlex align="center" borderBottom>
-        상품 기본 정보
+    <Grid isFlex border width="30rem">
+      <Grid width="13rem">
+        <Grid
+          bg={bg.category}
+          height="3.5rem"
+          isFlex
+          align="center"
+          padding="0 0 0 .5rem"
+        >
+          <Text bold>필터 태그</Text>
+        </Grid>
       </Grid>
-      <Grid isFlex height="20rem">
-        <Grid width="13rem" borderRight borderBottom>
-          <Grid
-            bg={bg.category}
-            height="3.5rem"
-            isFlex
-            align="center"
-            padding="0 0 0 .5rem"
+      <Grid isFlex column position="relative">
+        <Grid isFlex height="3.5rem" borderBottom padding=".5rem 0 0 0">
+          <Input
+            placeholder="필터태그를 검색해 주세요."
+            width="80%"
+            height="80%"
+            padding=".5rem"
+            _onFocus={focusInput}
+            _onBlur={blurInput}
+            _onChange={changeInput}
+            _ref={inputRef}
+          />
+          <Button
+            width="20%"
+            height="80%"
+            bg="#fff"
+            border={text.dark}
+            color={text.dark}
           >
-            <Text bold>필터 태그</Text>
-          </Grid>
+            검색
+          </Button>
         </Grid>
-        <Grid isFlex column position="relative">
-          <Grid isFlex height="3.5rem" borderBottom padding=".5rem 0 0 0">
-            <Input
-              placeholder="필터태그를 검색해 주세요."
-              width="80%"
-              height="80%"
-              padding=".5rem"
-              _onFocus={focusInput}
-              _onBlur={blurInput}
-              _onChange={changeInput}
-              _ref={inputRef}
-            />
-            <Button
-              width="20%"
-              height="80%"
-              bg="#fff"
-              border={text.dark}
-              color={text.dark}
-            >
-              검색
-            </Button>
-          </Grid>
-          {selectedTag.length !== 0 && (
-            <SelectedTag
-              selectedTag={selectedTag}
-              setSelectedTag={setSelectedTag}
-            />
-          )}
-          {tagClick === 1 && (
-            <SearchTag
-              searchWord={searchWord}
-              setSearchWord={setSearchWord}
-              selectedTag={selectedTag}
-              setSelectedTag={setSelectedTag}
-              inputRef={inputRef}
-            />
-          )}
-        </Grid>
+        {selectedTag.length !== 0 && (
+          <SelectedTag
+            selectedTag={selectedTag}
+            setSelectedTag={setSelectedTag}
+          />
+        )}
+        {tagClick === 1 && (
+          <SearchTag
+            searchWord={searchWord}
+            setSearchWord={setSearchWord}
+            selectedTag={selectedTag}
+            setSelectedTag={setSelectedTag}
+            inputRef={inputRef}
+          />
+        )}
       </Grid>
     </Grid>
   );
