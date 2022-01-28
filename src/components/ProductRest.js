@@ -17,13 +17,7 @@ const ProductRest = () => {
           <Text bold>상품 총 재고 *</Text>
         </Grid>
       </Grid>
-      <Grid
-        isFlex
-        width="80%"
-        height="3.5rem"
-        padding="0 0 0 .5rem"
-        align="center"
-      >
+      <Grid isFlex width='80%' height='3.5rem' padding='0 0 0 .5rem' align='center'>
         <Text>7개</Text>
       </Grid>
     </Grid>

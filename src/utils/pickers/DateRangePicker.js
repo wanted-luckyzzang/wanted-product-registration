@@ -27,17 +27,9 @@ export default function DateRangeInputPicker() {
         onChange={(newValue) => setValue(newValue)}
         renderInput={(startProps, endProps) => (
           <React.Fragment>
-            <input
-              style={styled.inputSytle}
-              ref={startProps.inputRef}
-              {...startProps.inputProps}
-            />
+            <input style={styled.inputSytle} ref={startProps.inputRef} {...startProps.inputProps} />
             <Box sx={{ mx: 1 }}> ~ </Box>
-            <input
-              style={styled.inputSytle}
-              ref={endProps.inputRef}
-              {...endProps.inputProps}
-            />
+            <input style={styled.inputSytle} ref={endProps.inputRef} {...endProps.inputProps} />
           </React.Fragment>
         )}
       />

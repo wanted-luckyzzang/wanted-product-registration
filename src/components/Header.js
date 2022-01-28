@@ -14,6 +14,7 @@ const Header = () => {
 
 const LogoLeftHeader = styled.header`
   height: 3rem;
+  width: 60rem;
   border-bottom: 1px solid #e3e3e3;
 `;
 

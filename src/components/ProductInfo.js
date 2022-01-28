@@ -37,7 +37,7 @@ const ProductName = () => {
         >
           <Text bold>상품 코드</Text>
         </Grid>
-        <Grid width="20rem" isFlex align="center" padding="0 0 0 .5rem">
+        <Grid width='20rem' isFlex align='center' padding='0 0 0 .5rem'>
           <Text>{PRODUCT_ID}</Text>
         </Grid>
       </Grid>

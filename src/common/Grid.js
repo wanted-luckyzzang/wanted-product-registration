@@ -86,10 +86,8 @@ const ElGrid = styled.div`
   ${(props) => props.position && `position: ${props.position};`}
   ${(props) => (props.radius ? `border-radius: ${props.radius};` : '')}
   ${(props) => (props.border ? `border: 1px solid ${border.primary};` : '')};
-  ${(props) =>
-    props.borderBottom ? `border-bottom: 1px solid ${border.primary};` : ''};
-  ${(props) =>
-    props.borderRight ? `border-right: 1px solid ${border.primary};` : ''};
+  ${(props) => (props.borderBottom ? `border-bottom: 1px solid ${border.primary};` : '')};
+  ${(props) => (props.borderRight ? `border-right: 1px solid ${border.primary};` : '')};
   ${(props) =>
     props.scrollY
       ? `overflow: scroll;

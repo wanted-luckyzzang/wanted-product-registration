@@ -1,16 +1,7 @@
 import styled from 'styled-components';
 import { text } from 'styles/palette';
 export default function Text(props) {
-  const {
-    size,
-    bold,
-    color,
-    children,
-    textAlign,
-    textType,
-    lineHeight,
-    margin,
-  } = props;
+  const { size, bold, color, children, textAlign, textType, lineHeight, margin } = props;
   const styles = {
     size,
     bold,
@@ -19,11 +10,7 @@ export default function Text(props) {
     lineHeight,
     margin,
   };
-  return textType === 'span' ? (
-    <ElSpan {...styles}>{children}</ElSpan>
-  ) : (
-    <ElText {...styles}>{children}</ElText>
-  );
+  return textType === 'span' ? <ElSpan {...styles}>{children}</ElSpan> : <ElText {...styles}>{children}</ElText>;
 }
 Text.defaultProps = {
   size: '14px',

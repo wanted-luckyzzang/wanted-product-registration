@@ -18,7 +18,9 @@ const BasicInfo = () => {
         >
           <Text bold>상품 기본 정보</Text>
         </Grid>
+
         <Category />
+
         <FilterTag />
         <ProductInfo />
         <ProductImage />
