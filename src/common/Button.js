@@ -24,7 +24,7 @@ Button.defaultProps = {
   width: '100%',
   height: '40px',
   bg: bg.primary,
-  color: text.default,
+  color: '#fff',
   margin: '0',
   border: '',
   children: null,
