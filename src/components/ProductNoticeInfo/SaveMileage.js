@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { Grid, Button, Text, Input, Container } from "common";
-import ProductOptionToggle from "./ProductOptionToggle";
+import { Grid, Toggle } from "common";
 
 const SaveMileage = (props) => {
 	return (
@@ -9,7 +8,7 @@ const SaveMileage = (props) => {
 				<Grid width="8rem" borderRight padding="0.5rem">
 					<OptionTitle>마일리지 적립</OptionTitle>
 				</Grid>
-				<ProductOptionToggle />
+				<Toggle />
 			</Grid>
 		</>
 	);
