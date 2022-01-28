@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
 import { Grid, Button, Text } from "common";
@@ -8,12 +8,18 @@ import {
 	ProductShppingSetting,
 	SaveMileage,
 } from "components/ProductNoticeInfo/index";
-const ProductNoticeInfo = () => {
+const ProductNoticeInfo = ({}) => {
 	const [noticeInfo, setNoticeInfo] = useState([
 		{
 			noticeInfo: uuidv4(),
 		},
 	]);
+
+	const ChangeNoticeInfohandler = (e) => {
+		console.log(e);
+		console.log(e.target.value);
+	};
+
 	const AddNoticeInfoHandler = () => {
 		setNoticeInfo((prev) => [
 			...prev,
@@ -34,7 +40,7 @@ const ProductNoticeInfo = () => {
 	return (
 		<Grid isFlex>
 			<Grid border isFlex column>
-				<Grid marginTop="2rem" border isFlex column border>
+				<Grid marginTop="2rem" border isFlex column border gridType="form">
 					<Grid border height="2.5rem" width="auto" margin="2rem 2rem 0 2rem">
 						<Text bold size="1rem" margin="0.5rem">
 							상품 정보 고시
@@ -52,6 +58,7 @@ const ProductNoticeInfo = () => {
 						{noticeInfo.map((el, idx) => (
 							<NoticeInfo
 								DeleteNoticeInfoHandler={DeleteNoticeInfoHandler}
+								ChangeNoticeInfohandler={ChangeNoticeInfohandler}
 								key={el.key}
 								idx={idx}
 							/>
