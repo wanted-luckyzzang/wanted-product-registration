@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Grid, Button, Text, Input } from "common";
 
-const NoticeInfo = () => {
+const NoticeInfo = ({ DeleteNoticeInfoHandler, idx }) => {
 	return (
 		<>
 			<Main>
@@ -16,6 +16,7 @@ const NoticeInfo = () => {
 							width: "3rem",
 							height: "2rem",
 						}}
+						onClick={() => DeleteNoticeInfoHandler(idx)}
 					>
 						삭제
 					</button>
@@ -101,7 +102,7 @@ const NoticeInfo = () => {
 						width="10rem"
 						bg="transparent"
 						color="#352f6e"
-						border="1px solid #ebebeb"
+						border="#ebebeb"
 						bold="700"
 					>
 						+ 항목 추가
