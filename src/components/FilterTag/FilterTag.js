@@ -1,10 +1,7 @@
 import React, { useCallback, useRef, useState } from 'react';
-import { Grid, Button, Text } from 'common';
-import { text } from 'styles/palette';
-import Input from 'common/Input';
-import { bg } from 'styles/palette';
-import SearchTag from './SearchTag';
-import SelectedTag from './SelectedTag';
+import { SearchTag, SelectedTag } from './index';
+import { Grid, Button, Text, Input } from 'common';
+import { bg, text } from 'styles/palette';
 
 const FilterTag = () => {
   const [tagClick, setTagClick] = useState(0);
@@ -32,19 +29,13 @@ const FilterTag = () => {
 
   return (
     <Grid isFlex borderBottom>
-      <Grid width="10rem">
-        <Grid
-          bg={bg.field}
-          height="3.5rem"
-          isFlex
-          align="center"
-          padding="0 0 0 1rem"
-        >
+      <Grid width='10rem'>
+        <Grid bg={bg.field} height='3.5rem' isFlex align='center' padding='0 0 0 1rem'>
           <Text bold>필터 태그</Text>
         </Grid>
       </Grid>
-      <Grid isFlex column position="relative">
-        <Grid isFlex height="3.5rem" padding=".5rem 0 0 1rem">
+      <Grid isFlex column position='relative'>
+        <Grid isFlex height='3.5rem' padding='.5rem 0 0 1rem'>
           <Input
             placeholder='필터태그를 검색해 주세요.'
             width='80%'

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { ProductsPeriodSetting, BasicInfo, ProductNoticeInfo, ProductOption } from 'pages';
-import 'styles/App.css';
 import { Layout } from 'components';
+import 'styles/App.css';
 
 function App() {
   return (

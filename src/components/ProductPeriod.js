@@ -1,6 +1,6 @@
 import React from 'react';
-import { Grid } from 'common';
 import DateRangeInputPicker from 'utils/pickers/DateRangePicker';
+import { Grid } from 'common';
 import { bg } from 'styles/palette';
 
 const ProductPeriod = ({ type, selectedOption, selectBtnHandler }) => {

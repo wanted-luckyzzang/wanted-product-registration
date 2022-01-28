@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { border } from 'styles/palette';
+
 const Grid = (props) => {
   const {
     width,
@@ -28,6 +29,7 @@ const Grid = (props) => {
     cursor,
     _onClick,
   } = props;
+
   const styles = {
     width,
     height,
@@ -51,6 +53,7 @@ const Grid = (props) => {
     marginBottom,
     cursor,
   };
+
   return gridType === 'form' ? (
     <ElForm {...styles} onSubmit={_onSubmit}>
       {children}
@@ -61,6 +64,7 @@ const Grid = (props) => {
     </ElGrid>
   );
 };
+
 Grid.defaultProps = {
   width: '100%',
   height: 'auto',
@@ -81,6 +85,7 @@ Grid.defaultProps = {
   cursor: '',
   _onClick: () => {},
 };
+
 const ElGrid = styled.div`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
@@ -96,10 +101,8 @@ const ElGrid = styled.div`
   ${(props) => props.position && `position: ${props.position};`}
   ${(props) => (props.radius ? `border-radius: ${props.radius};` : '')}
   ${(props) => (props.border ? `border: 1px solid ${border.primary};` : '')};
-  ${(props) =>
-    props.borderBottom ? `border-bottom: 1px solid ${border.primary};` : ''};
-  ${(props) =>
-    props.borderRight ? `border-right: 1px solid ${border.primary};` : ''};
+  ${(props) => (props.borderBottom ? `border-bottom: 1px solid ${border.primary};` : '')};
+  ${(props) => (props.borderRight ? `border-right: 1px solid ${border.primary};` : '')};
   ${(props) =>
     props.scrollY
       ? `overflow: scroll;
@@ -109,6 +112,7 @@ const ElGrid = styled.div`
   margin-bottom: ${(props) => props.marginBottom};
   cursor: ${(props) => props.cursor};
 `;
+
 const ElForm = styled.form`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
@@ -120,4 +124,5 @@ const ElForm = styled.form`
   background: ${(props) => props.bg};
   ${(props) => (props.border ? `border: 2px solid ${border.primary};` : '')};
 `;
+
 export default Grid;
