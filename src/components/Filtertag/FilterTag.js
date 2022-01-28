@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import { Grid, Button, Text } from 'common';
 import { text } from 'styles/palette';
 import Input from 'common/Input';
@@ -9,17 +9,26 @@ import SelectedTag from './SelectedTag';
 const FilterTag = () => {
   const [tagClick, setTagClick] = useState(0);
   const [selectedTag, setSelectedTag] = useState([]);
+  const [searchWord, setSearchWord] = useState('');
+  const inputRef = useRef(null);
 
-  const focusInput = (event) => {
+  const focusInput = useCallback((event) => {
     event.target.placeholder = '검색어를 입력하세요.';
     setTagClick(1);
-  };
-  const blurInput = (event) => {
+  }, []);
+
+  const blurInput = useCallback((event) => {
     event.target.placeholder = '필터태그를 검색해 주세요.';
     setTimeout(() => {
+      inputRef.current.value = '';
+      setSearchWord('');
       setTagClick(0);
-    }, 100);
-  };
+    }, 90);
+  }, []);
+
+  const changeInput = useCallback((event) => {
+    setSearchWord(event.target.value);
+  }, []);
 
   return (
     <Grid width="40rem" margin="2rem auto 2rem" border isFlex column>
@@ -38,7 +47,7 @@ const FilterTag = () => {
             <Text bold>필터 태그</Text>
           </Grid>
         </Grid>
-        <Grid isFlex column>
+        <Grid isFlex column position="relative">
           <Grid isFlex height="3.5rem" borderBottom padding=".5rem 0 0 0">
             <Input
               placeholder="필터태그를 검색해 주세요."
@@ -47,6 +56,8 @@ const FilterTag = () => {
               padding=".5rem"
               _onFocus={focusInput}
               _onBlur={blurInput}
+              _onChange={changeInput}
+              _ref={inputRef}
             />
             <Button
               width="20%"
@@ -66,8 +77,11 @@ const FilterTag = () => {
           )}
           {tagClick === 1 && (
             <SearchTag
+              searchWord={searchWord}
+              setSearchWord={setSearchWord}
               selectedTag={selectedTag}
               setSelectedTag={setSelectedTag}
+              inputRef={inputRef}
             />
           )}
         </Grid>
