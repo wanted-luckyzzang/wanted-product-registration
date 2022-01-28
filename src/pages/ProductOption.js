@@ -38,9 +38,10 @@ const ProductOption = () => {
         <Button
           height="4rem"
           bg="#fff"
-          border="#352f6e"
+          border="#36306e"
           _onClick={addOptionButton}
-          width="5rem"
+          width="10rem"
+          height="3rem"
         >
           <Text color="black" size="1rem">
             + 옵션 세트 추가
@@ -55,16 +56,19 @@ const ProductOption = () => {
           </Text>
         </Grid>
       ) : (
-        <Grid column bg="#efefef" padding="3rem 2rem 3rem 2rem">
+        <Grid column bg="#efefef" padding="2rem 2rem 3rem 2rem">
           {option.map((el, idx) => (
             <Grid column key={el.key}>
               <Grid isFlex justify="flex-end" bg="#efefef">
                 <Button
                   bg="white"
                   border="#dc2b2c"
+                  width="4.5rem"
+                  height="2rem"
+                  margin="0 0 1rem 0"
                   _onClick={() => optionSetDelete(idx)}
                 >
-                  <Text size="1.5rem" color="#dc2b2c">
+                  <Text size="0.8rem" color="#dc2b2c">
                     삭제
                   </Text>
                 </Button>
