@@ -10,7 +10,6 @@ import Navbar from './Navbar';
 import BigOption from './BigOption';
 import SmallOption from './SmallOption';
 
-
 export {
   FilterTag,
   Category,
@@ -18,11 +17,9 @@ export {
   Layout,
   Header,
   SubHeader,
-  NoticeInfo,
   ProductInfo,
   ProductRest,
   Navbar,
   BigOption,
   SmallOption,
 };
-export { FilterTag, Category, ImageUpload, Layout, Header, SubHeader, ProductInfo, ProductRest, Navbar };

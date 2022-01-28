@@ -3,7 +3,6 @@ import Button from './Button';
 import Input from './Input';
 import Text from './Text';
 import Checkbox from './Checkbox';
-import Toggle from './Toggle';
 import ImageUpload from './ImageUpload';
 
-export { Grid, Button, Input, Text, Checkbox, Toggle, ImageUpload };
+export { Grid, Button, Input, Text, Checkbox, ImageUpload };
