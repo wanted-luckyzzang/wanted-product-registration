@@ -11,10 +11,8 @@ import { Layout } from "components";
 import "styles/App.css";
 
 function App() {
-	const [clickFlag, setClickFlag] = useState(0);
-
 	return (
-		<Layout clickFlag={clickFlag} setClickFlag={setClickFlag}>
+		<Layout>
 			<Routes>
 				<Route path="/" element={<ProductsPeriodSetting />} />
 				<Route path="/basicinfo" element={<BasicInfo />} />
