@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import { Grid, Button, Text, Input, Container } from "common";
+import { Grid, Toggle } from "common";
 import DateRangeInputPicker from "utils/pickers/DateRangePicker";
 import DatePicker from "utils/pickers/DatePicker";
-import ProductOptionToggle from "./ProductOptionToggle";
 
 const PreOrderShipping = (props) => {
 	return (
@@ -13,13 +12,13 @@ const PreOrderShipping = (props) => {
 						<OptionTitle>사용자 배송일</OptionTitle>
 						<OptionTitle>출발일 지정</OptionTitle>
 					</Grid>
-					<ProductOptionToggle />
+					<Toggle />
 				</Grid>
 				<Grid isFlex height="10rem" width="auto" borderBottom>
 					<Grid width="8rem" borderRight padding="0.5rem">
 						<OptionTitle>방문 수령</OptionTitle>
 					</Grid>
-					<ProductOptionToggle />
+					<Toggle />
 				</Grid>
 				<Grid isFlex height="25rem" width="auto">
 					<Grid width="8rem" borderRight padding="0.5rem">
@@ -27,7 +26,9 @@ const PreOrderShipping = (props) => {
 						<OptionTitle>예약 배송</OptionTitle>
 					</Grid>
 					<Grid width="40rem" isFlex column margin="1rem 1.5rem">
-						<Options>토글버튼</Options>
+						<Options>
+							<Toggle />
+						</Options>
 						<Grid isFlex margin="1rem 0">
 							<Options>주문 시간</Options>
 							<DateRangeInputPicker />

@@ -121,7 +121,7 @@ const NoticeInfo = () => {
 						width="100%"
 						bg="transparent"
 						color="#352f6e"
-						border="1.5px solid #352f6e"
+						border="#352f6e"
 						fontWeight="bold"
 					>
 						+ 정보고시 추가

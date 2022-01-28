@@ -1,15 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { Grid, Button, Text, Input } from "common";
+import { Grid } from "common";
 import {
 	NoticeInfo,
 	OfferThankCard,
 	ProductShppingSetting,
 	SaveMileage,
 } from "components/ProductNoticeInfo/index";
-import Header from "components/Header";
-import Navbar from "components/Navbar";
-import Sidebar from "components/Sidebar";
 const ProductNoticeInfo = (props) => {
 	return (
 		<Grid isFlex>

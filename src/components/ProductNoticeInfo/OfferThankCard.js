@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { Grid, Button, Text, Input, Container } from "common";
-import ProductOptionToggle from "./ProductOptionToggle";
+import { Grid, Toggle } from "common";
 
 const OfferThankCard = (props) => {
 	return (
@@ -10,7 +9,7 @@ const OfferThankCard = (props) => {
 					<OptionTitle>감사카드</OptionTitle>
 					<OptionTitle>제공</OptionTitle>
 				</Grid>
-				<ProductOptionToggle />
+				<Toggle />
 			</Grid>
 		</>
 	);
