@@ -31,14 +31,20 @@ const FilterTag = () => {
   }, []);
 
   return (
-    <Grid isFlex border width='30rem'>
-      <Grid width='13rem'>
-        <Grid bg={bg.category} height='3.5rem' isFlex align='center' padding='0 0 0 .5rem'>
+    <Grid isFlex borderBottom>
+      <Grid width="10rem">
+        <Grid
+          bg={bg.field}
+          height="3.5rem"
+          isFlex
+          align="center"
+          padding="0 0 0 1rem"
+        >
           <Text bold>필터 태그</Text>
         </Grid>
       </Grid>
-      <Grid isFlex column position='relative'>
-        <Grid isFlex height='3.5rem' borderBottom padding='.5rem 0 0 0'>
+      <Grid isFlex column position="relative">
+        <Grid isFlex height="3.5rem" padding=".5rem 0 0 1rem">
           <Input
             placeholder='필터태그를 검색해 주세요.'
             width='80%'

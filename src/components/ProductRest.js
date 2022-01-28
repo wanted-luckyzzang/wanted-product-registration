@@ -4,9 +4,16 @@ import { bg } from 'styles/palette';
 
 const ProductRest = () => {
   return (
-    <Grid isFlex border>
-      <Grid width='20%'>
-        <Grid bg={bg.category} height='3.5rem' isFlex align='center' padding='0 0 0 .5rem'>
+    <Grid isFlex borderBottom>
+      <Grid>
+        <Grid
+          width="8.6rem"
+          bg={bg.field}
+          height="3.5rem"
+          isFlex
+          align="center"
+          padding="0 0 0 .5rem"
+        >
           <Text bold>상품 총 재고 *</Text>
         </Grid>
       </Grid>
@@ -17,4 +24,4 @@ const ProductRest = () => {
   );
 };
 
-export default React.memo(ProductRest);
+export default ProductRest;
