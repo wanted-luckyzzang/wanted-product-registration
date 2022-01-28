@@ -1,7 +1,9 @@
 import { Grid, Button } from 'common';
 import { useNavigate } from 'react-router';
+
 const Navbar = () => {
   const navigate = useNavigate();
+
   return (
     <>
       <Grid width='12rem' position='sticky' borderBottom='1px solid #E3E3E3' margin='0'>
@@ -18,7 +20,7 @@ const Navbar = () => {
           <Button border='none' borderBottom='1px solid #E3E3E3'>
             상품 기본 정보
           </Button>
-          <Button border='none' borderBottom='1px solid #E3E3E3'>
+          <Button border='none' borderBottom='1px solid #E3E3E3' _onClick={() => navigate(`/productoption`)}>
             상품 옵션
           </Button>
           <Button border='none' borderBottom='1px solid #E3E3E3'>

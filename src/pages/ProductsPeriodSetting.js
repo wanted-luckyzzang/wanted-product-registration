@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
-import { Grid, Button } from 'common';
 import { useNavigate } from 'react-router';
-import ProductPeriod from 'components/ProductPeriod';
+import { ProductPeriod } from 'components';
+import { Grid, Button } from 'common';
 
 const ProductsPeriodSetting = () => {
   const navigate = useNavigate();
@@ -56,14 +56,8 @@ const ProductsPeriodSetting = () => {
 
   return (
     <Grid border>
-      <Grid width="60rem">
-        <Grid
-          height="2.5rem"
-          isFlex
-          align="center"
-          borderBottom
-          padding="0 0 0 1rem"
-        >
+      <Grid width='60rem'>
+        <Grid height='2.5rem' isFlex align='center' borderBottom padding='0 0 0 1rem'>
           노출 및 판매기간 설정
         </Grid>
         <ProductPeriod
