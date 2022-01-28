@@ -1,8 +1,9 @@
 import React, { useState, useCallback } from 'react';
-import { Grid, Checkbox, Text, Button, Tag } from 'common';
-import { bg } from 'styles/palette';
+import { Grid, Text, Button, Tag } from 'common';
+import { bg, border } from 'styles/palette';
 import { Link } from 'react-router-dom';
 import CATEGORY from 'utils/categoryData';
+import { unstable_ClassNameGenerator } from '@mui/material';
 
 export const Category = (props) => {
   const [selectedTag, setSelectedTag] = useState([]);
@@ -17,6 +18,14 @@ export const Category = (props) => {
   );
 
   console.log(selectedTag);
+
+  const onDeleteTag = useCallback(
+    (deleteTag) => {
+      // console.log(e.target.innerText);
+      setSelectedTag(selectedTag.filter((tag) => deleteTag !== tag));
+    },
+    [selectedTag]
+  );
 
   return (
     <Grid width='45rem' margin='1rem auto' border isFlex column>
@@ -39,13 +48,12 @@ export const Category = (props) => {
             })}
           </Grid>
 
-          {selectedTag.length === 0 ? (
+          {selectedTag.length > 0 ? (
             <Grid width='13rem' padding='0.8rem 1.2rem' border scrollY>
               {selectedTag.map((item, idx) => {
-                console.log(item);
                 return (
                   <Grid key={idx} isFlex align='center' margin='0 0 0.6rem'>
-                    <Button>{item}</Button>
+                    <Button _onClick={() => onDeleteTag(item)}>{item}</Button>
                   </Grid>
                 );
               })}
