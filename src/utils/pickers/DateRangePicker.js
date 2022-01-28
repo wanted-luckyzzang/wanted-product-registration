@@ -4,8 +4,9 @@ import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import DateRangePicker from "@mui/lab/DateRangePicker";
 
-export default function DateRangeInputPicker(props) {
+export default function DateRangeInputPicker() {
 	const [value, setValue] = React.useState([null, null]);
+
 	const styled = {
 		inputSytle: {
 			width: "170px",
