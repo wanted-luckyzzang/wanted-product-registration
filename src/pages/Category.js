@@ -5,30 +5,18 @@ import { Link } from 'react-router-dom';
 import CATEGORY from 'utils/categoryData';
 
 export const Category = (props) => {
-  // const navigate = useNavigate();
-  const [checked, setChecked] = useState(false);
-  const [checkedItems, setCheckedItems] = useState(new Set());
-
-  const checkedItemHandler = useCallback(
-    (item, isChecked) => {
-      if (isChecked) {
-        checkedItems.add(item);
-        setCheckedItems(checkedItems);
-      } else if (!isChecked && checkedItems.has(item)) {
-        checkedItems.delete(item);
-        setCheckedItems(checkedItems);
-      }
-    },
-    [checkedItems]
-  );
+  const [selectedTag, setSelectedTag] = useState([]);
 
   const checkHandler = useCallback(
-    (e, item) => {
-      setChecked(!checked);
-      checkedItemHandler(item, e.target.checked);
+    (e) => {
+      if (e.target.checked && !selectedTag.includes(e.target.value)) {
+        setSelectedTag([...selectedTag, e.target.value]);
+      }
     },
-    [checked, checkedItemHandler]
+    [selectedTag, setSelectedTag]
   );
+
+  console.log(selectedTag);
 
   return (
     <Grid width='45rem' margin='1rem auto' border isFlex column>
@@ -44,21 +32,29 @@ export const Category = (props) => {
             {CATEGORY.map((item, idx) => {
               return (
                 <Grid key={idx} isFlex align='center' margin='0 0 0.6rem'>
-                  {/* <Checkbox checked={bChecked} _onClick={checkHandler} /> */}
-                  <input type='checkbox' checked={checked} onChange={checkHandler} />
-                  <Text>{item}</Text>
+                  <input id='check' type='checkbox' value={item} onChange={(e, item) => checkHandler(e, item)} />
+                  {item}
                 </Grid>
               );
             })}
           </Grid>
 
-          <Grid width='14rem' border padding='0.8rem 1.2rem' scrollY>
-            {CATEGORY.map((item, idx) => (
-              <Grid key={idx} isFlex align='center' margin='0 0 0.6rem'>
-                <Tag>{item}</Tag>
-              </Grid>
-            ))}
-          </Grid>
+          {selectedTag.length === 0 ? (
+            <Grid width='13rem' padding='0.8rem 1.2rem' border scrollY>
+              {selectedTag.map((item, idx) => {
+                console.log(item);
+                return (
+                  <Grid key={idx} isFlex align='center' margin='0 0 0.6rem'>
+                    <Button>{item}</Button>
+                  </Grid>
+                );
+              })}
+            </Grid>
+          ) : (
+            <Grid width='14rem' padding='0.8rem 1.2rem' border scrollY isFlex justify='center' align='center'>
+              <Text>카테고리를 지정해주세요.</Text>
+            </Grid>
+          )}
         </Grid>
       </Grid>
       <Button>
