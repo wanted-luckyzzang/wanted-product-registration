@@ -1,7 +1,13 @@
-import ProductsPeriodSetting from './ProductsPeriodSetting';
 import BasicInfo from './BasicInfo';
-import ProductOption from './ProductOption';
-import ProductImage from './ProductImage';
+import ProductsPeriodSetting from './ProductsPeriodSetting';
 import ProductNoticeInfo from './ProductNoticeInfo';
+import ProductOption from './ProductOption';
+import ImageSelect from './ImageSelect';
 
-export { ProductsPeriodSetting, BasicInfo, ProductOption, ProductImage, ProductNoticeInfo };
+export {
+  BasicInfo,
+  ProductsPeriodSetting,
+  ProductNoticeInfo,
+  ProductOption,
+  ImageSelect,
+};
