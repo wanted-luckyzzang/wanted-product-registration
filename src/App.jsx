@@ -1,14 +1,15 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { ProductsPeriodSetting, BasicInfo, ProductNoticeInfo } from 'pages';
+import { ProductsPeriodSetting, BasicInfo, ProductNoticeInfo, TogglePage } from 'pages';
 import 'styles/App.css';
-import { Layout, FilterTag, ImageUpload } from 'components';
+import { Layout } from 'components';
 
 function App() {
   return (
     <Layout>
       <Routes>
-        <Route path='/' element={<ProductsPeriodSetting />} />
+        <Route path='/' element={<TogglePage />} />
+        {/* <Route path='/' element={<ProductsPeriodSetting />} /> */}
         <Route path='/basicinfo' element={<BasicInfo />} />
         {/* <Route path='/productoption' element={<ProductOption />} /> */}
         {/* <Route path='/productimage' element={<ProductImage />} /> */}
