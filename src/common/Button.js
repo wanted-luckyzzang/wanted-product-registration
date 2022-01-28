@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import icon from 'Assets/deleteIcon.png';
+import icon from 'assets/deleteIcon.png';
 import { bg, text, border } from 'styles/palette';
 
 export default function Button(props) {
@@ -35,7 +35,7 @@ export default function Button(props) {
           }}
           onClick={onClick}
         >
-          <img src={icon} style={{ width: '1.1rem' }} />
+          <img src={icon} style={{ width: '1.1rem' }} alt='product' />
         </div>
       )}
     </>
@@ -59,9 +59,9 @@ const ElButton = styled.button`
   justify-content: center;
   width: ${(props) => props.width};
   height: ${(props) => props.height};
-  ${(props) => (props.margin ? `margin: ${props.margin};` : '')}
-  ${(props) => (props.color ? `color: ${props.color};` : '')}
-  ${(props) => (props.bg ? `background: ${props.bg};` : '')};
-  ${(props) => (props.border ? `border: 1px solid ${props.border};` : '')}
+  ${(props) => props.margin && `margin: ${props.margin};`}
+  ${(props) => props.color && `color: ${props.color};`}
+  ${(props) => props.bg && `background: ${props.bg};`};
+  ${(props) => props.border && `border: 1px solid ${props.border};`}
   border-radius: 4px;
 `;

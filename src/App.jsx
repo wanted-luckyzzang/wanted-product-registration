@@ -1,21 +1,17 @@
-import React from "react";
-import GlobalStyle from "styles/GlobalStyle";
-import { Category } from "pages/Category";
-import "styles/App.css";
-import FilterTag from "components/Filtertag";
-import ImageUpload from "pages/ImageUpload";
-import { Routes, Route } from "react-router-dom";
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { BasicInfo, TogglePage } from 'pages';
+import 'styles/App.css';
+import { Layout } from 'components';
 
 function App() {
   return (
-    <>
-      <GlobalStyle />
+    <Layout>
       <Routes>
-        <Route path="/" element={<Category />} />
-        <Route path="/filtertag" element={<FilterTag />} />
-        <Route path="/imageupload" element={<ImageUpload />} />
+        <Route path='/' element={<TogglePage />} />
+        {/* <Route path='/' element={<BasicInfo />} /> */}
       </Routes>
-    </>
+    </Layout>
   );
 }
 

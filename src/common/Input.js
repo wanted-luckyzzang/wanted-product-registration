@@ -46,7 +46,7 @@ const ElInput = styled.input`
   margin: ${(props) => props.margin};
   border: 1px solid #ebebeb;
   border-radius: 4px;
-  ${(props) => (props.none ? 'display: none;' : '')}
+  ${(props) => props.none && 'display: none;'}
   ${(props) => (props.height ? `height: ${props.height};` : '40px')}
 `;
 

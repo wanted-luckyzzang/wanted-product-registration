@@ -20,7 +20,6 @@ const Checkedbox = styled.div`
   margin-right: 0.6rem;
   border: 1px solid #8e8e8e;
   cursor: pointer;
-  /* background: ${(props) => (props.checked ? '#4b0082' : '#fff')}; */
   background: indigo;
   display: flex;
   justify-content: center;
