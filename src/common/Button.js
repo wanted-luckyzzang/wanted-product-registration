@@ -16,6 +16,8 @@ export default function Button(props) {
 		bold,
 		type,
 		sx,
+		borderBottom,
+		borderTop,
 	} = props;
 
 	const styles = {
@@ -27,6 +29,8 @@ export default function Button(props) {
 		border,
 		fontWeight,
 		bold,
+		borderBottom,
+		borderTop,
 	};
 
 	return (
@@ -64,7 +68,7 @@ Button.defaultProps = {
 	bg: "#fff",
 	color: "#000",
 	type: "button",
-	border: "red",
+	border: "1px solid #e3e3e3",
 	_onClick: () => {},
 };
 
@@ -77,7 +81,10 @@ const ElButton = styled.button`
 	${(props) => (props.margin ? `margin: ${props.margin};` : "")}
 	${(props) => (props.color ? `color: ${props.color};` : "")}
   ${(props) => (props.bg ? `background: ${props.bg};` : "")};
-	${(props) => (props.border ? `border: 1px solid ${props.border};` : "")}
+	${(props) => (props.border ? `border: ${props.border};` : "")}
 	border-radius: 4px;
 	font-weight: ${(props) => (props.bold ? "700" : "400")};
+	margin: ${(props) => props.margin};
+	${(props) => (props.border ? `border-bottom: ${props.borderBottom};` : "")}
+	${(props) => (props.border ? `border-top: ${props.borderTop};` : "")}
 `;
