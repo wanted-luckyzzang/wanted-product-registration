@@ -18,13 +18,16 @@ const ProductPeriod = ({ type, selectedOption, selectBtnHandler }) => {
       label3 = '노출 기간 설정';
   }
 
+  let style = {
+    marginBottom: '1rem',
+  };
   return (
     <Grid isFlex height="13rem" borderBottom>
-      <Grid width="10rem" borderRight>
+      <Grid width="10rem" borderRight padding="1rem 0 0 1rem">
         {title}
       </Grid>
-      <Grid width="50rem" borderRight isFlex column>
-        <div>
+      <Grid width="50rem" borderRight isFlex column padding="1rem 0 0 1rem">
+        <div style={style}>
           <input
             type="radio"
             value="noLimitForShowing"
@@ -33,7 +36,7 @@ const ProductPeriod = ({ type, selectedOption, selectBtnHandler }) => {
           />
           <label>{label1}</label>
         </div>
-        <div>
+        <div style={style}>
           <input
             type="radio"
             value="NoneForShowing"
@@ -42,7 +45,7 @@ const ProductPeriod = ({ type, selectedOption, selectBtnHandler }) => {
           />
           <label>{label2}</label>
         </div>
-        <div>
+        <div style={style}>
           <input
             type="radio"
             value="setForShowing"
