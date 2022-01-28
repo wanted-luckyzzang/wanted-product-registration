@@ -138,7 +138,7 @@ const OptionTitle = styled.div`
 `;
 
 const Footer = styled.div`
-	width: 96.5%;
+	width: 95.2%;
 	margin: 0 auto;
 `;
 export default ProductNoticeInfo;

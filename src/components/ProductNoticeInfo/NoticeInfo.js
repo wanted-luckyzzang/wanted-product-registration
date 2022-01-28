@@ -83,6 +83,7 @@ const NoticeInfo = () => {
 							width="27.8rem"
 							textIndent="1rem"
 							margin="0 1rem 0 0"
+							height
 						/>
 						<button
 							style={{
