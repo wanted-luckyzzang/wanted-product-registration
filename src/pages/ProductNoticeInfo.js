@@ -40,7 +40,6 @@ const ProductNoticeInfo = ({}) => {
 	const valueList = document
 		.querySelectorAll("input")
 		.forEach((el) => el.value);
-	console.log(valueList);
 
 	// useEffect(() => {
 	// 	if (click) {
