@@ -5,6 +5,7 @@ import {
   BasicInfo,
   ProductNoticeInfo,
   ProductOption,
+  ImageSelect,
 } from 'pages';
 import 'styles/App.css';
 import { Layout } from 'components';
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<ProductsPeriodSetting />} />
         <Route path="/basicinfo" element={<BasicInfo />} />
         <Route path="/productoption" element={<ProductOption />} />
+        <Route path="/imageselect" element={<ImageSelect />} />
         <Route path="/noticeInfo" element={<ProductNoticeInfo />} />
       </Routes>
     </Layout>
