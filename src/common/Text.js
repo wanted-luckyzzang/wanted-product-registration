@@ -2,8 +2,16 @@ import styled from "styled-components";
 import { text } from "styles/palette";
 
 export default function Text(props) {
-	const { size, bold, color, children, textAlign, textType, lineHeight } =
-		props;
+	const {
+		size,
+		bold,
+		color,
+		children,
+		textAlign,
+		textType,
+		lineHeight,
+		margin,
+	} = props;
 
 	const styles = {
 		size,
@@ -11,6 +19,7 @@ export default function Text(props) {
 		color,
 		textAlign,
 		lineHeight,
+		margin,
 	};
 
 	return textType === "span" ? (
@@ -40,4 +49,5 @@ const ElSpan = styled.span`
 	color: ${(props) => props.color};
 	${(props) => `text-align: ${props.textAlign}`};
 	line-height: ${(props) => props.lineHeight};
+	margin: ${(props) => props.margin};
 `;
