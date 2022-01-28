@@ -5,7 +5,15 @@ import { Grid, Button, Text, Input } from "common";
 const NoticeInfo = () => {
 	return (
 		<>
-			<Grid bg="#d3d3d36b" height="35rem" column isFlex align="center">
+			<Grid
+				marginTop="2rem"
+				width="auto"
+				bg="#d3d3d36b"
+				height="35rem"
+				column
+				isFlex
+				align="center"
+			>
 				<Main>
 					<Header>
 						<Text bold="700" size="1.1rem">
@@ -77,11 +85,13 @@ const NoticeInfo = () => {
 								placeholder="항목 제목 자유 입력"
 								width="17rem"
 								textIndent="1rem"
+								margin="0 1rem 0 0"
 							/>
 							<Input
 								placeholder="내용을 입력해주세요."
 								width="27.8rem"
 								textIndent="1rem"
+								margin="0 1rem 0 0"
 							/>
 							<button
 								style={{
@@ -111,7 +121,7 @@ const NoticeInfo = () => {
 						width="100%"
 						bg="transparent"
 						color="#352f6e"
-						border="1.5px solid #352f6e"
+						border="#352f6e"
 						fontWeight="bold"
 					>
 						+ 정보고시 추가

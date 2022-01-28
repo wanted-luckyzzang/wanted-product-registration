@@ -1,20 +1,20 @@
-import React, { useCallback, useState } from 'react';
-import { Grid, Button } from 'common';
-import { useNavigate } from 'react-router';
-import ProductPeriod from 'components/ProductPeriod';
+import React, { useCallback, useState } from "react";
+import { Grid, Button } from "common";
+import { useNavigate } from "react-router";
+import ProductPeriod from "components/ProductPeriod";
 
 const ProductsPeriodSetting = () => {
-  const navigate = useNavigate();
-  const [selectedShowingOption, setSelectedShowingOption] = useState();
-  const [selectedSellingOption, setSelectedSellingOption] = useState();
+	const navigate = useNavigate();
+	const [selectedShowingOption, setSelectedShowingOption] = useState();
+	const [selectedSellingOption, setSelectedSellingOption] = useState();
 
-  const selectShowingBtnHandler = useCallback((event) => {
-    setSelectedShowingOption(event.target.value);
-  }, []);
+	const selectShowingBtnHandler = useCallback((event) => {
+		setSelectedShowingOption(event.target.value);
+	}, []);
 
-  const selectSellingBtngHandler = useCallback((event) => {
-    setSelectedSellingOption(event.target.value);
-  }, []);
+	const selectSellingBtngHandler = useCallback((event) => {
+		setSelectedSellingOption(event.target.value);
+	}, []);
 
   return (
     <Grid border>
@@ -41,6 +41,7 @@ const ProductsPeriodSetting = () => {
       </Grid>
     </Grid>
   );
+
 };
 
 export default ProductsPeriodSetting;
