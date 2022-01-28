@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import styled from 'styled-components';
 import { Grid, Button, Text, Input, Container } from 'common';
 import ProductOptionToggle from './ProductOptionToggle';
@@ -14,6 +15,23 @@ const OfferThankCard = (props) => {
       </Grid>
     </>
   );
+=======
+import styled from "styled-components";
+import { Grid, Toggle } from "common";
+
+const OfferThankCard = (props) => {
+	return (
+		<>
+			<Grid isFlex height="5rem" width="auto">
+				<Grid width="8rem" borderRight padding="0.5rem">
+					<OptionTitle>감사카드</OptionTitle>
+					<OptionTitle>제공</OptionTitle>
+				</Grid>
+				<Toggle />
+			</Grid>
+		</>
+	);
+>>>>>>> main
 };
 
 const OptionTitle = styled.div`
