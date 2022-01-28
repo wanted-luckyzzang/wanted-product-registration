@@ -1,27 +1,50 @@
-import styled from "styled-components";
-import { Grid, Button, Text } from "common";
-
+import { Grid, Button } from 'common';
+import { useNavigate } from 'react-router';
 const Navbar = () => {
-	return (
-		<>
-			<Grid
-				padding="0 1rem"
-				borderBottom="1px solid #e3e3e3"
-				justify="space-between"
-				isFlex
-				// height="2.2rem"
-			>
-				<Text size="1.1rem" bold lineHeight="2rem">
-					상품 등록
-				</Text>
-				<Button width="6rem" height="2rem" bg="#352f6e">
-					<Text color="#FFFFFF" size="0.9rem">
-						저장하기
-					</Text>
-				</Button>
-			</Grid>
-		</>
-	);
+  const navigate = useNavigate();
+  return (
+    <>
+      <Grid
+        width="12rem"
+        position="sticky"
+        borderBottom="1px solid #E3E3E3"
+        margin="0"
+      >
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            height: '60%',
+          }}
+        >
+          <Button
+            height="43.5px"
+            _onClick={() => navigate(`/`)}
+            border="none"
+            borderBottom="1px solid #E3E3E3"
+          >
+            노출 및 판매기간 설정
+          </Button>
+          <Button border="none" borderBottom="1px solid #E3E3E3">
+            상품 기본 정보
+          </Button>
+          <Button border="none" borderBottom="1px solid #E3E3E3">
+            상품 옵션
+          </Button>
+          <Button border="none" borderBottom="1px solid #E3E3E3">
+            상품 등록
+          </Button>
+          <Button
+            border="none"
+            borderBottom="1px solid #E3E3E3"
+            _onClick={() => navigate(`/noticeInfo`)}
+          >
+            상품 정보 고시
+          </Button>
+        </div>
+      </Grid>
+    </>
+  );
 };
 
 export default Navbar;
