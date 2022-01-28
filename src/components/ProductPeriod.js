@@ -19,36 +19,21 @@ const ProductPeriod = ({ type, selectedOption, selectBtnHandler }) => {
   }
 
   return (
-    <Grid isFlex height="13rem" borderBottom>
-      <Grid width="10rem" borderRight>
+    <Grid isFlex height='13rem' borderBottom>
+      <Grid width='10rem' borderRight>
         {title}
       </Grid>
-      <Grid width="50rem" borderRight isFlex column>
+      <Grid width='50rem' borderRight isFlex column>
         <div>
-          <input
-            type="radio"
-            value="noLimitForShowing"
-            checked={selectedOption === 'noLimitForShowing'}
-            onChange={selectBtnHandler}
-          />
+          <input type='radio' value='noLimitForShowing' checked={selectedOption === 'noLimitForShowing'} onChange={selectBtnHandler} />
           <label>{label1}</label>
         </div>
         <div>
-          <input
-            type="radio"
-            value="NoneForShowing"
-            checked={selectedOption === 'NoneForShowing'}
-            onChange={selectBtnHandler}
-          />
+          <input type='radio' value='NoneForShowing' checked={selectedOption === 'NoneForShowing'} onChange={selectBtnHandler} />
           <label>{label2}</label>
         </div>
         <div>
-          <input
-            type="radio"
-            value="setForShowing"
-            checked={selectedOption === 'setForShowing'}
-            onChange={selectBtnHandler}
-          />
+          <input type='radio' value='setForShowing' checked={selectedOption === 'setForShowing'} onChange={selectBtnHandler} />
           <label>{label3}</label>
         </div>
         <DateRangeInputPicker />
