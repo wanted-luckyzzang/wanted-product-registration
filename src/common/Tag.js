@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Tag = ({ tagContent, _onClick }) => {
-  return <Tagitem onClick={_onClick}>{tagContent}</Tagitem>;
+const Tag = ({ children, _onClick }) => {
+  return <Tagitem onClick={_onClick}>{children}</Tagitem>;
 };
 
 const Tagitem = styled.div`
