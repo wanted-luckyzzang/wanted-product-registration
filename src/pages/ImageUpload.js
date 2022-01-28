@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import { v4 as uuidv4 } from "uuid";
 import { Grid, Button, Input } from "common";
-import DeleteButton from "common/DeleteButton";
 
 const PreviewImage = styled.img`
   width: 100%;
