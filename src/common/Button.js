@@ -60,8 +60,8 @@ const ElButton = styled.button`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
   ${(props) => (props.margin ? `margin: ${props.margin};` : '')}
-  ${(props) => (props.color ? `color: ${props.color}` : '')}
-  ${(props) => (props.bg ? `background: ${props.bg}` : '')};
-  ${(props) => (props.border ? `border: 1px solid ${props.border}` : '')}
+  ${(props) => (props.color ? `color: ${props.color};` : '')}
+  ${(props) => (props.bg ? `background: ${props.bg};` : '')};
+  ${(props) => (props.border ? `border: 1px solid ${props.border};` : '')}
   border-radius: 4px;
 `;
