@@ -51,7 +51,7 @@ const ProductNoticeInfo = ({}) => {
 	return (
 		<Grid isFlex>
 			<Grid border isFlex column>
-				<Grid marginTop="2rem" border isFlex column border>
+				<Grid marginTop="2rem" border isFlex column border gridType="form">
 					<Grid border height="2.5rem" width="auto" margin="2rem 2rem 0 2rem">
 						<Text bold size="1rem" margin="0.5rem">
 							상품 정보 고시

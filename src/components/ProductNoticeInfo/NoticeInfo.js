@@ -25,7 +25,7 @@ const NoticeInfo = ({
 	};
 
 	const DeleteInputHandler = (idx, event) => {
-		event.preventDefaul();
+		event.preventDefault();
 		setMoreNoticeOptions((prev) => {
 			return [...prev].filter((el, elIdx) => {
 				return elIdx !== idx;
