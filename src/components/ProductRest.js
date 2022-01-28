@@ -1,8 +1,6 @@
 import React from 'react';
 import { Grid, Text } from 'common';
-import Input from 'common/Input';
 import { bg } from 'styles/palette';
-import { v1 } from 'uuid';
 
 const ProductRest = () => {
   return (
