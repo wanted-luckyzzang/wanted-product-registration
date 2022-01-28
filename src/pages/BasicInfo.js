@@ -1,6 +1,5 @@
 import React from 'react';
-import Category from 'components/Category';
-import FilterTag from 'components/FilterTag/FilterTag';
+import { Category, FilterTag } from 'components';
 import ImageUpload from 'components/ImageUpload';
 import { Grid, Input, Text } from 'common';
 import { bg } from 'styles/palette';
@@ -12,7 +11,9 @@ const BasicInfo = (props) => {
         <Grid height='3rem' isFlex align='center' borderBottom>
           <Text bold>상품 기본 정보</Text>
         </Grid>
+
         <Category />
+
         <FilterTag />
 
         <Grid isFlex>
