@@ -36,6 +36,7 @@ const ElText = styled.p`
 	font-weight: ${(props) => (props.bold ? "700" : "400")};
 	color: ${(props) => props.color};
 	line-height: ${(props) => props.lineHeight};
+	margin: ${(props) => props.margin};
 `;
 const ElSpan = styled.span`
 	font-size: ${(props) => props.size};
