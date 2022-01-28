@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
 import { Grid, Button, Text } from "common";
 import {
@@ -8,18 +9,20 @@ import {
 	SaveMileage,
 } from "components/ProductNoticeInfo/index";
 const ProductNoticeInfo = () => {
-	const [noticeInfo, setNoticeInfo] = useState([]);
+	const [noticeInfo, setNoticeInfo] = useState([
+		{
+			noticeInfo: uuidv4(),
+		},
+	]);
 	const AddNoticeInfoHandler = () => {
-		setNoticeInfo([]);
-		console.log(noticeInfo);
-		setNoticeInfo = true;
-		if (noticeInfo) {
-			setNoticeInfo((prev) => [...prev, noticeInfo]);
-			console.log("dd");
-			console.log(noticeInfo);
-			// setNoticeInfo((prev) => [...prev, noticeInfo]);
-		}
+		setNoticeInfo((prev) => [
+			...prev,
+			{
+				key: uuidv4(),
+			},
+		]);
 	};
+
 	return (
 		<Grid isFlex>
 			<Grid border isFlex column>
@@ -29,33 +32,34 @@ const ProductNoticeInfo = () => {
 							상품 정보 고시
 						</Text>
 					</Grid>
-					{noticeInfo && (
-						<Grid
-							bg="#d3d3d36b"
-							height="auto"
-							width="auto"
-							margin="0 2rem"
-							align="center"
-							border
-						>
-							{/* 15번 상품 정보 고시 */}
-							<NoticeInfo />
-							<Footer>
-								<Button
-									width="100%"
-									bg="transparent"
-									color="#352f6e"
-									border="#352f6e"
-									fontWeight="bold"
-									_onClick={AddNoticeInfoHandler}
-									margin="0 0 1rem 0"
-									bold
-								>
-									+ 정보고시 추가
-								</Button>
-							</Footer>
-						</Grid>
-					)}
+					<Grid
+						bg="#d3d3d36b"
+						height="auto"
+						width="auto"
+						margin="0 2rem"
+						align="center"
+						border
+					>
+						{/* 15번 상품 정보 고시 */}
+						{noticeInfo.map((el, idx) => (
+							<NoticeInfo key={el.key} />
+						))}
+
+						<Footer>
+							<Button
+								width="100%"
+								bg="transparent"
+								color="#352f6e"
+								border="#352f6e"
+								fontWeight="bold"
+								_onClick={AddNoticeInfoHandler}
+								margin="1rem 0"
+								bold
+							>
+								+ 정보고시 추가
+							</Button>
+						</Footer>
+					</Grid>
 
 					<Grid
 						border
@@ -134,7 +138,7 @@ const OptionTitle = styled.div`
 `;
 
 const Footer = styled.div`
-	width: 96.5%;
+	width: 95.2%;
 	margin: 0 auto;
 `;
 export default ProductNoticeInfo;
