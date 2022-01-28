@@ -2,7 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { Grid, Button, Text, Input } from "common";
 
-const NoticeInfo = ({ DeleteNoticeInfoHandler, idx }) => {
+const NoticeInfo = ({
+	ChangeNoticeInfohandler,
+	DeleteNoticeInfoHandler,
+	idx,
+	noticeInfoOptions,
+}) => {
 	return (
 		<>
 			<Main>
@@ -27,6 +32,8 @@ const NoticeInfo = ({ DeleteNoticeInfoHandler, idx }) => {
 							제품명 / 중량
 						</Text>
 						<Input
+							onChange={() => ChangeNoticeInfohandler()}
+							value={noticeInfoOptions}
 							placeholder="제품명 / 중량을 입력해 주세요."
 							width="35rem"
 							textIndent="1rem"
