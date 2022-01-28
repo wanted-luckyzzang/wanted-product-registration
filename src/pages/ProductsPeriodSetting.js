@@ -18,12 +18,25 @@ const ProductsPeriodSetting = () => {
 
   return (
     <Grid border>
-      <Grid width='60rem' border margin='1rem 0 0 1rem'>
-        <Grid height='2.5rem' isFlex align='center' borderBottom padding='0 0 0 1rem'>
+      <Grid width="60rem">
+        <Grid
+          height="2.5rem"
+          isFlex
+          align="center"
+          borderBottom
+          padding="0 0 0 1rem"
+        >
           노출 및 판매기간 설정
         </Grid>
-        <ProductPeriod selectedOption={selectedShowingOption} selectBtnHandler={selectShowingBtnHandler} />
-        <ProductPeriod type='product-sale' selectedOption={selectedSellingOption} selectBtnHandler={selectSellingBtngHandler} />
+        <ProductPeriod
+          selectedOption={selectedShowingOption}
+          selectBtnHandler={selectShowingBtnHandler}
+        />
+        <ProductPeriod
+          type="product-sale"
+          selectedOption={selectedSellingOption}
+          selectBtnHandler={selectSellingBtngHandler}
+        />
         <Button _onClick={() => navigate(`/basicInfo`)}>다음</Button>
       </Grid>
     </Grid>
