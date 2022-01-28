@@ -6,7 +6,7 @@ import { useNavigate } from "react-router";
 
 const Container = (props) => {
 	const navigate = useNavigate();
-	const { children } = props;
+	const { children, SalesSettingSubmitHandler } = props;
 
 	return (
 		<>
@@ -17,7 +17,7 @@ const Container = (props) => {
 				border="1px solid black"
 				isFlex
 			>
-				<Grid height="100%" borderRight>
+				<Grid width="15rem" height="100%" borderRight>
 					<Header></Header>
 					<div
 						style={{
@@ -33,10 +33,16 @@ const Container = (props) => {
 						<Button>상품 기본 정보</Button>
 						<Button>상품 옵션</Button>
 						<Button>상품 등록</Button>
-						<Button>상품 정보 고시</Button>
+						<Button _onClick={() => navigate(`/noticeInfo`)}>
+							상품 정보 고시
+						</Button>
 					</div>
 				</Grid>
-				<Grid height="100%">
+				<Grid
+					height="100%"
+					gridType="form"
+					_onSubmit={SalesSettingSubmitHandler}
+				>
 					<EmptyHeader></EmptyHeader>
 					<SectionTitle>
 						<Text size="1.1rem" bold>
@@ -48,7 +54,7 @@ const Container = (props) => {
 							</Text>
 						</Button>
 					</SectionTitle>
-					<Grid width="90%" height="80%" margin="auto">
+					<Grid width="97%" height="80%" margin="auto">
 						{children}
 					</Grid>
 				</Grid>
@@ -71,7 +77,7 @@ const SectionTitle = styled.div`
 	display: flex;
 	justify-content: space-between;
 	border-bottom: 1px solid #e3e3e3;
-	padding: 0.3rem 1rem;
+	padding: 0.3rem 2rem;
 	margin: auto 0.5rem;
 	align-items: center;
 	margin-bottom: 1.5rem;
