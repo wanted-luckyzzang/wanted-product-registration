@@ -5,6 +5,7 @@ import Input from 'common/Input';
 import { bg } from 'styles/palette';
 import SearchTag from './SearchTag';
 import SelectedTag from './SelectedTag';
+import ProductName from 'components/ProductName';
 
 const FilterTag = () => {
   const [tagClick, setTagClick] = useState(0);
@@ -31,12 +32,10 @@ const FilterTag = () => {
   }, []);
 
   return (
-    <Grid width="40rem" margin="2rem auto 2rem" border isFlex column>
-      <Grid height="5rem" isFlex align="center" borderBottom>
-        상품 기본 정보
-      </Grid>
-      <Grid isFlex height="20rem">
-        <Grid width="13rem" borderRight borderBottom>
+    <>
+      //FilterComponent
+      <Grid isFlex border width="30rem">
+        <Grid width="13rem">
           <Grid
             bg={bg.category}
             height="3.5rem"
@@ -86,7 +85,9 @@ const FilterTag = () => {
           )}
         </Grid>
       </Grid>
-    </Grid>
+      //ProductNameComponent
+      <ProductName />
+    </>
   );
 };
 

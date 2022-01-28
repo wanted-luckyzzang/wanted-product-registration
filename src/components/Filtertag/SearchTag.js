@@ -33,7 +33,7 @@ const SearchTag = ({
       scrollY
       height="7rem"
       position="absolute"
-      top="4rem"
+      top="3.5rem"
       border
       padding=".5rem"
     >
