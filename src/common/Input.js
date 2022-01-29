@@ -66,8 +66,8 @@ const ElInput = styled.input`
   margin: ${(props) => props.margin};
   border: 1px solid #ebebeb;
   border-radius: 4px;
-  ${(props) => (props.none ? 'display: none;' : '')};
   height: ${(props) => props.height};
+  ${(props) => (props.none ? 'display: none;' : '')};
   ${(props) => `text-indent: ${props.textIndent}`};
   ${(props) => `text-align: ${props.textAlign}`}
 `;

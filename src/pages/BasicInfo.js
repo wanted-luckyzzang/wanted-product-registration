@@ -3,7 +3,7 @@ import { Category, FilterTag, ProductInfo, ProductRest, ProductImage, FooterBtn 
 import { Grid, Text } from 'common';
 
 const BasicInfo = () => {
-  const [click, setClick] = useState(0);
+  const [click, setClick] = useState(false);
 
   return (
     <>

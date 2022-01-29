@@ -11,7 +11,14 @@
 ## 🔮 역할 배분
 
 ⚜ 박민주 --- <br/>
-⚜ 윤예나 --- <br/>
+- 15(상품 정보 고시) 추가 및 삭제 기능 구현, MUI 라이브러리 구현
+- 1, 2, 15-20, header, navbar 마크업
+
+⚜ 윤예나 
+- 3번 카테고리 기능 구현 (체크박스 클릭 시 우측에 태그 생성, 태그 클릭 시 해당된 체크박스 해제, 체크박스 클릭 시 우측의 태그 해제) 
+- common 폴더의 공통 뷰 컴포넌트 작성 (Grid, Button, Input 등)
+- 16~20번 토글 스위치 버튼 구현 (common 폴더의 Switch.js)
+<br/>
 ⚜ 안병진 --- <br/>
 ⚜ 이지용 --- 4(필터 태그 기능), 5(상품명, 상품 코드), 6(상품 구성 소개 정보), 9(상품 총 재고)<br/>
 
@@ -83,10 +90,33 @@ npm run start
     └── tagData.js			// filter tag Data 자료
 ```
 
-### ✅ 과제에 제시된 요구사항 모두 구현
+### 🛶 문제 해결 로그
+#### 문제
+팀원들과 작업 화면을 공유하는 과정에서 컴포넌트 박스 구현 시 px로 하면 
+모니터 크기마다 보이는 뷰가 매우 달라지는 현상을 발견하였습니다.
 
-- <br/>
+#### 해결
+px 대신 rem 개념을 사용하여 최상위 root 태그의 font-size를
+모니터 크기별로 반응형으로 적용하였습니다. (App.css에 작성)
 
-### ✅ 추가 구현사항
+```jsx
+// App.css
 
--
+#root {
+  font-size: 16px; // root에서 font-size를 지정하였습니다.
+}
+
+// 미디어 쿼리를 통해 서로 다른 모니터 크기에 따라 root의 font-size가 다르게 적용되도록 하였습니다.
+@media screen and (max-width: 1500px) {
+  #root {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 2550px) {
+  #root {
+    font-size: 20px;
+  }
+}
+
+// 예: width를 40rem이라고 하면 각 모니터에 적용된 font-size에 따라 width의 전체 px 값이 결정됨
+```
