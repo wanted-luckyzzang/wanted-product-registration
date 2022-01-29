@@ -2,7 +2,7 @@
 
 ## 🥽 배포 링크
 
-<h2><a href='https://trusting-montalcini-7ac111.netlify.app</a></h2>
+<h2><a href='https://trusting-montalcini-7ac111.netlify.app</a>https://trusting-montalcini-7ac111.netlify.app/</h2>
 
 ## 🚩 노션 주소
 
