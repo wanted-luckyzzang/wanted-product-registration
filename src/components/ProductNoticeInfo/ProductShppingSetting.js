@@ -6,7 +6,7 @@ import DatePicker from "utils/pickers/DatePicker";
 const PreOrderShipping = (props) => {
 	return (
 		<>
-			<Grid isFlex column height="20rem" width="auto">
+			<Grid isFlex column height="20rem" width="auto" gridType="from">
 				<Grid isFlex height="10rem" width="auto" borderBottom="1px solid black">
 					<Grid width="8rem" borderRight padding="0.5rem">
 						<OptionTitle>사용자 배송일</OptionTitle>

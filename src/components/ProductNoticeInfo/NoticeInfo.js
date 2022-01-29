@@ -8,7 +8,9 @@ const NoticeInfo = ({
 	DeleteNoticeInfoHandler,
 	idx,
 	noticeInfoOptions,
+	upperInput,
 }) => {
+	const [clickFlag, setClickFlag] = useState();
 	const [moreNoticeOptions, setMoreNoticeOptions] = useState([
 		{
 			moreNoticeOptions: uuidv4(),
@@ -25,7 +27,6 @@ const NoticeInfo = ({
 	};
 
 	const DeleteInputHandler = (idx, event) => {
-		event.preventDefault();
 		setMoreNoticeOptions((prev) => {
 			return [...prev].filter((el, elIdx) => {
 				return elIdx !== idx;
@@ -62,6 +63,7 @@ const NoticeInfo = ({
 							placeholder="제품명 / 중량을 입력해 주세요."
 							width="35rem"
 							textIndent="1rem"
+							className="upperInput"
 						/>
 					</InfoOptions>
 					<InfoOptions>
@@ -105,7 +107,7 @@ const NoticeInfo = ({
 						/>
 					</InfoOptions>
 					{moreNoticeOptions.map((el, idx) => (
-						<InfoOptions key={idx}>
+						<InfoOptions key={idx} clickFlag={clickFlag}>
 							<Input
 								placeholder="항목 제목 자유 입력"
 								width="17rem"
