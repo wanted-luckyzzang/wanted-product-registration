@@ -2,7 +2,7 @@
 
 ## 🥽 배포 링크
 
-<h2><a href='https://luckyzzang-product-registration.netlify.app/'>https://somber-sunset-e11.notion.site/_-_-b96ebb328d044f718f228de869934e0f</a></h2>
+<h2><a href='https://trusting-montalcini-7ac111.netlify.app</a></h2>
 
 ## 🚩 노션 주소
 
