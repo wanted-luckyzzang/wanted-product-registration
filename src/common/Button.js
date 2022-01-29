@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import icon from "assets/deleteIcon.png";
-
+import { border } from "styles/palette";
 export default function Button(props) {
 	const {
 		width,
@@ -17,6 +17,7 @@ export default function Button(props) {
 		sx,
 		borderBottom,
 		borderTop,
+		position,
 	} = props;
 
 	const styles = {
@@ -30,6 +31,7 @@ export default function Button(props) {
 		bold,
 		borderBottom,
 		borderTop,
+		position,
 	};
 
 	return (
@@ -52,9 +54,15 @@ export default function Button(props) {
 					<img src={icon} style={{ width: "1.1rem" }} alt="product" />
 				</div>
 			)}
-			<ElButton {...styles} type={type} onClick={_onClick}>
-				{children}
-			</ElButton>
+			{type === "nav" ? (
+				<ElNavBtn {...styles} onClick={_onClick}>
+					{children}
+				</ElNavBtn>
+			) : (
+				<ElButton {...styles} type={type} onClick={_onClick}>
+					{children}
+				</ElButton>
+			)}
 		</>
 	);
 }
@@ -68,6 +76,7 @@ Button.defaultProps = {
 	type: "button",
 	border: "1px solid #e3e3e3",
 	_onClick: () => {},
+	borderBottom: "1px solid #e3e3e3",
 };
 
 const ElButton = styled.button`
@@ -79,7 +88,20 @@ const ElButton = styled.button`
 	${(props) => props.margin && `margin: ${props.margin};`};
 	${(props) => props.color && `color: ${props.color};`};
 	${(props) => props.bg && `background: ${props.bg};`};
-	${(props) => props.border && `border: 1px solid ${props.border};`};
+	${(props) => (props.border ? `border: 1px solid ${border.primary};` : "")};
 	border-radius: 4px;
 	font-weight: ${(props) => (props.bold ? "700" : "400")};
+	${(props) =>
+		props.borderBottom ? `border-bottom: 1px solid ${border.primary};` : ""};
+`;
+
+const ElNavBtn = styled.button`
+	display: flex;
+	justify-content: space-between;
+	height: 2.05rem;
+	width: 100%;
+	border-bottom: 1px solid #e3e3e3;
+	line-height: 2rem;
+	text-indent: 1.2rem;
+	position: relative;
 `;
