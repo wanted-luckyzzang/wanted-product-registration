@@ -9,7 +9,7 @@ const FooterBtn = ({ params, setClick }) => {
   return (
     <Grid isFlex justify='flex-end' margin='1.5rem 0 2.5rem'>
       <Button width='10rem' height='3rem' margin='0 1.5rem 0 0' border={border.primary} _onClick={() => navigate(-1)}>
-        <Text bold>이전</Text>
+        <Text bold>이전으로</Text>
       </Button>
       <Button
         width='10rem'
@@ -22,7 +22,7 @@ const FooterBtn = ({ params, setClick }) => {
         }}
       >
         <Text bold color='#fff'>
-          다음
+          저장하고 다음으로
         </Text>
       </Button>
     </Grid>

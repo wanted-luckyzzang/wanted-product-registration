@@ -1,5 +1,6 @@
 import React, { useCallback, useRef, useState, useEffect } from 'react';
-import { SearchTag, SelectedTag } from './index';
+import SearchTag from './SearchTag';
+import SelectedTag from './SelectedTag';
 import { Grid, Button, Text, Input } from 'common';
 import { bg, text } from 'styles/palette';
 
@@ -69,4 +70,4 @@ const FilterTag = ({ click }) => {
   );
 };
 
-export default React.memo(FilterTag);
+export default FilterTag;
