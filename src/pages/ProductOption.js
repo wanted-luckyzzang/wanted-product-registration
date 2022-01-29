@@ -39,7 +39,9 @@ const ProductOption = () => {
           border
           padding="0 0 0 1rem"
         >
-          <Text size="1.7rem">상품 옵션*</Text>
+          <Text size="1rem" bold>
+            상품 옵션*
+          </Text>
           <Button
             height="4rem"
             bg="#fff"

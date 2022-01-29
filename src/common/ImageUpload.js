@@ -1,14 +1,19 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
 import { Grid, Button, Input, Text } from 'common';
+import { border } from 'styles/palette';
 
 const PreviewImage = styled.img`
   width: 100%;
   height: 100%;
 `;
 
-const ImageUpload = ({ preview, setOptionSetData }) => {
+const ImageUpload = ({
+  preview,
+  setProductImage = null,
+  setOptionSetData = null,
+}) => {
   const [images, setImages] = useState([]);
   const [url, setUrl] = useState('');
   const imgInputRef = useRef(null);
@@ -26,6 +31,7 @@ const ImageUpload = ({ preview, setOptionSetData }) => {
     for (const idx in files) {
       if (!isNaN(idx)) {
         setImages((prev) => [...prev, files[idx].name]);
+        setProductImage((images) => [...images]);
       }
     }
   };
@@ -108,7 +114,6 @@ const ImageUpload = ({ preview, setOptionSetData }) => {
           <Button
             _onClick={addImageButton}
             width="14rem"
-            color="red"
             bg="#fff"
             border="#363168"
             type="button"
