@@ -1,8 +1,7 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
 import { Grid, Button, Input, Text } from 'common';
-import { border } from 'styles/palette';
 
 const PreviewImage = styled.img`
   width: 100%;

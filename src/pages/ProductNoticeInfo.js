@@ -8,7 +8,6 @@ import {
   ProductShppingSetting,
   SaveMileage,
 } from 'components/ProductNoticeInfo/index';
-import { FooterBtn } from 'components';
 import { bg } from 'styles/palette';
 const ProductNoticeInfo = (props) => {
   const [noticeInfo, setNoticeInfo] = useState([
