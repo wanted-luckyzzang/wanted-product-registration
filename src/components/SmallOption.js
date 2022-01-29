@@ -3,9 +3,11 @@ import { v4 as uuidv4 } from 'uuid';
 import { Button, Grid, Input, Text } from 'common';
 import styled from 'styled-components';
 import icon from 'assets/arrow.png';
+import _ from 'lodash';
 
-const SmallOption = ({ optionDelete }) => {
+const SmallOption = ({ optionDelete, setOptionSetData }) => {
   const [option, setOption] = useState([]);
+
   const addOptionProductButton = () => {
     setOption((prev) => [
       ...prev,
@@ -21,6 +23,97 @@ const SmallOption = ({ optionDelete }) => {
         return elIdx !== idx;
       });
     });
+  };
+
+  const getDebounceOptionName = _.debounce((data) => {
+    setOptionSetData((prev) => [
+      ...prev,
+      {
+        optionName: data,
+      },
+    ]);
+  }, 1000);
+
+  const handleOptionName = (e) => {
+    getDebounceOptionName(e.target.value);
+  };
+
+  const getDebouncNormalPrice = _.debounce((data) => {
+    setOptionSetData((prev) => [
+      ...prev,
+      {
+        normalPrice: data,
+      },
+    ]);
+  }, 1000);
+
+  const handleNormalPrice = (e) => {
+    getDebouncNormalPrice(e.target.value);
+  };
+
+  const getDebouncPrice = _.debounce((data) => {
+    setOptionSetData((prev) => [
+      ...prev,
+      {
+        price: data,
+      },
+    ]);
+  }, 1000);
+
+  const handlePrice = (e) => {
+    getDebouncPrice(e.target.value);
+  };
+
+  const getDebounceStock = _.debounce((data) => {
+    setOptionSetData((prev) => [
+      ...prev,
+      {
+        stock: data,
+      },
+    ]);
+  }, 1000);
+
+  const handleStock = (e) => {
+    getDebounceStock(e.target.value);
+  };
+
+  const getDebounceTax = _.debounce((data) => {
+    setOptionSetData((prev) => [
+      ...prev,
+      {
+        tax: data,
+      },
+    ]);
+  }, 1000);
+
+  const handleTax = (e) => {
+    getDebounceTax(e.target.value);
+  };
+
+  const getDebounceAddOptionName = _.debounce((data) => {
+    setOptionSetData((prev) => [
+      ...prev,
+      {
+        addOptionName: data,
+      },
+    ]);
+  }, 1000);
+
+  const handleAddOptionName = (e) => {
+    getDebounceAddOptionName(e.target.value);
+  };
+
+  const getDebounceAddOptionNormalPrice = _.debounce((data) => {
+    setOptionSetData((prev) => [
+      ...prev,
+      {
+        addOptionNormalPrice: data,
+      },
+    ]);
+  }, 1000);
+
+  const handleAddOptionNormalPrice = (e) => {
+    getDebounceAddOptionNormalPrice(e.target.value);
   };
   return (
     <Grid border="#ececec" radius="0.3rem" column margin="1rem 0 0 0">
@@ -43,6 +136,7 @@ const SmallOption = ({ optionDelete }) => {
           height="2.5rem"
           width="100%"
           margin="0 0 1rem 0"
+          _onChange={handleOptionName}
         />
       </Grid>
 
@@ -53,6 +147,7 @@ const SmallOption = ({ optionDelete }) => {
           width="10rem"
           margin="0 1rem 0 0"
           textAlign="center"
+          _onChange={handleNormalPrice}
         />
 
         <Text margin="0 1rem 0 0" size="1rem">
@@ -69,6 +164,7 @@ const SmallOption = ({ optionDelete }) => {
           width="10rem"
           margin="0 1rem 0 1rem"
           textAlign="center"
+          _onChange={handlePrice}
         />
         <Text margin="0 1rem 0 0">원</Text>
         <Input
@@ -77,10 +173,14 @@ const SmallOption = ({ optionDelete }) => {
           width="10rem"
           margin="0 1rem 0 1rem"
           textAlign="center"
+          _onChange={handleStock}
         />
         <Text margin="0 1rem 0 0">개</Text>
 
-        <Select style={{ marginLeft: '1rem', height: '2,5rem', width: '5rem' }}>
+        <Select
+          style={{ marginLeft: '1rem', height: '2,5rem', width: '5rem' }}
+          onChange={handleTax}
+        >
           <option value="taxation">과세</option>
           <option value="nonTaxable">비과세</option>
         </Select>
@@ -99,6 +199,7 @@ const SmallOption = ({ optionDelete }) => {
             width="22rem"
             margin="0 1rem 0 1rem"
             textAlign="center"
+            _onChange={handleAddOptionName}
           />
           <Input
             placeholder="추가 옵션 정상가 (필수)"
@@ -106,6 +207,7 @@ const SmallOption = ({ optionDelete }) => {
             width="16rem"
             margin="0 1rem 0 1rem"
             textAlign="center"
+            _onChange={handleAddOptionNormalPrice}
           />
           <Text margin="0 1rem 0 0" size="1rem">
             원
