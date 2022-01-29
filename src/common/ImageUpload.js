@@ -8,7 +8,7 @@ const PreviewImage = styled.img`
   height: 100%;
 `;
 
-const ImageUpload = ({ preview }) => {
+const ImageUpload = ({ preview, setOptionSetData }) => {
   const [images, setImages] = useState([]);
   const [url, setUrl] = useState('');
   const imgInputRef = useRef(null);
@@ -59,6 +59,12 @@ const ImageUpload = ({ preview }) => {
       .then((res) => res.json())
       .then((data) => {
         setUrl(data.url);
+        setOptionSetData((prev) => [
+          ...prev,
+          {
+            imageUrl: data.url,
+          },
+        ]);
       })
       .catch((err) => console.log(err));
   };
