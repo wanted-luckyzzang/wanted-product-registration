@@ -87,10 +87,33 @@ npm run start
     └── tagData.js			// filter tag Data 자료
 ```
 
-### ✅ 과제에 제시된 요구사항 모두 구현
+### 🛶 문제 해결 로그
+#### 문제
+팀원들과 작업 화면을 공유하는 과정에서 컴포넌트 박스 구현 시 px로 하면 
+모니터 크기마다 보이는 뷰가 매우 달라지는 현상을 발견하였습니다.
 
-- <br/>
+#### 해결
+px 대신 rem 개념을 사용하여 최상위 root 태그의 font-size를
+모니터 크기별로 반응형으로 적용하였습니다. (App.css에 작성)
 
-### ✅ 추가 구현사항
+```jsx
+// App.css
 
--
+#root {
+  font-size: 16px; // root에서 font-size를 지정하였습니다.
+}
+
+// 미디어 쿼리를 통해 서로 다른 모니터 크기에 따라 root의 font-size가 다르게 적용되도록 하였습니다.
+@media screen and (max-width: 1500px) {
+  #root {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 2550px) {
+  #root {
+    font-size: 20px;
+  }
+}
+
+// 예: width를 40rem이라고 하면 각 모니터에 적용된 font-size에 따라 width의 전체 px 값이 결정됨
+```
