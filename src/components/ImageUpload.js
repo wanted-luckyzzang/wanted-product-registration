@@ -32,7 +32,10 @@ const ImageUpload = ({ preview }) => {
   };
 
   const imageDeleteButton = (e) => {
-    const deleteFileName = e.currentTarget.parentNode.textContent.replace('x', '');
+    const deleteFileName = e.currentTarget.parentNode.textContent.replace(
+      'x',
+      ''
+    );
     setImages((prev) => {
       const filterFiles = [...prev].filter((el) => el !== deleteFileName);
       return filterFiles;
@@ -64,30 +67,69 @@ const ImageUpload = ({ preview }) => {
   return (
     <>
       {preview ? (
-        <Grid margin='0.5rem' bg='#e3e3e3' height='10rem' border isFlex justify='center' align='center'>
+        <Grid
+          margin="0.5rem"
+          bg="#e3e3e3"
+          height="10rem"
+          border
+          isFlex
+          justify="center"
+          align="center"
+        >
           {url ? (
             <PreviewImage src={url} />
           ) : (
             <>
-              <Button children='+ 이미지첨부' bg='white' color='black' width='12rem' _onClick={addPreviewImageButton} />
-              <Input type='file' _ref={imgPreviewInputRef} _onChange={imgPreviewChange} none />
+              <Button
+                children="+ 이미지첨부"
+                bg="white"
+                color="black"
+                width="12rem"
+                _onClick={addPreviewImageButton}
+              />
+              <Input
+                type="file"
+                _ref={imgPreviewInputRef}
+                _onChange={imgPreviewChange}
+                none
+              />
             </>
           )}
         </Grid>
       ) : (
         <div style={{ display: 'flex' }}>
-          <Button _onClick={addImageButton} width='14rem' border={border.button} type='button'>
+          <Button
+            _onClick={addImageButton}
+            width="14rem"
+            border={border.button}
+            type="button"
+          >
             + 이미지 첨부
           </Button>
 
-          <Grid margin='0 0 0 1em'>
+          <Grid margin="0 0 0 1em">
             {images.map((el) => (
-              <Grid isFlex align='center' style={{ display: 'flex' }} key={uuidv4()}>
+              <Grid
+                isFlex
+                align="center"
+                style={{ display: 'flex' }}
+                key={uuidv4()}
+              >
                 {el}
-                <Button sx={{ marginLeft: '0.5rem' }} onClick={imageDeleteButton} type='delete' />
+                <Button
+                  sx={{ marginLeft: '0.5rem' }}
+                  _onClick={imageDeleteButton}
+                  type="delete"
+                />
               </Grid>
             ))}
-            <Input type='file' _ref={imgInputRef} _onChange={imgChange} multiple none />
+            <Input
+              type="file"
+              _ref={imgInputRef}
+              _onChange={imgChange}
+              multiple
+              none
+            />
           </Grid>
         </div>
       )}

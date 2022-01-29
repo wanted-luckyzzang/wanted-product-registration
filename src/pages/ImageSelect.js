@@ -14,10 +14,13 @@ const ImageSelect = () => {
         >
           <Text size="1.3rem">상품 소개 이미지</Text>
         </Grid>
-        <Grid border="#e3e3e3">
-          <Grid margin="1.2rem 0 1.2rem 1rem">
-            <ImageUpload />
-          </Grid>
+        <Grid
+          border="#e3e3e3"
+          width="auto"
+          margin="0 0 1.2rem 0"
+          padding="1rem"
+        >
+          <ImageUpload />
         </Grid>
       </Grid>
 
@@ -31,12 +34,16 @@ const ImageSelect = () => {
         >
           <Text size="1.3rem">구매자 추천 이미지</Text>
         </Grid>
-        <Grid border="#e3e3e3">
-          <Grid margin="1.2rem 0 1.2rem 1rem">
-            <ImageUpload />
-          </Grid>
+        <Grid
+          border="#e3e3e3"
+          width="auto"
+          margin="0 0 1.2rem 0"
+          padding="1rem"
+        >
+          <ImageUpload />
         </Grid>
       </Grid>
+
       <FooterBtn params="noticeinfo" />
     </>
   );

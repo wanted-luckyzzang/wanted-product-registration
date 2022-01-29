@@ -1,9 +1,10 @@
-import React, { useCallback, useRef, useState } from 'react';
-import { SearchTag, SelectedTag } from './index';
+import React, { useCallback, useRef, useState, useEffect } from 'react';
+import SearchTag from './SearchTag';
+import SelectedTag from './SelectedTag';
 import { Grid, Button, Text, Input } from 'common';
 import { bg, text } from 'styles/palette';
 
-const FilterTag = () => {
+const FilterTag = ({ setFilterTag }) => {
   const [tagClick, setTagClick] = useState(0);
   const [selectedTag, setSelectedTag] = useState([]);
   const [searchWord, setSearchWord] = useState('');
@@ -14,14 +15,18 @@ const FilterTag = () => {
     setTagClick(1);
   }, []);
 
-  const blurInput = useCallback((event) => {
-    event.target.placeholder = '필터태그를 검색해 주세요.';
-    setTimeout(() => {
-      inputRef.current.value = '';
-      setSearchWord('');
-      setTagClick(0);
-    }, 90);
-  }, []);
+  const blurInput = useCallback(
+    (event) => {
+      event.target.placeholder = '필터태그를 검색해 주세요.';
+      setTimeout(() => {
+        inputRef.current.value = '';
+        setSearchWord('');
+        setTagClick(0);
+      }, 90);
+      setFilterTag((selectedTag) => [...selectedTag]);
+    },
+    [setFilterTag]
+  );
 
   const changeInput = useCallback((event) => {
     setSearchWord(event.target.value);
