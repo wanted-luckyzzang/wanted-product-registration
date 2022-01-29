@@ -14,18 +14,27 @@ const SelectedTag = ({ selectedTag, setSelectedTag }) => {
   );
 
   return (
-    <Grid border padding='.5rem'>
-      <Grid padding='.5rem 0 .5rem .5rem'>
-        <Text>지정된 필터 태그</Text>
-      </Grid>
-      <Grid isFlex isWrap>
-        {selectedTag.map((tag, idx) => (
-          <Grid width='5rem' isFlex justify='center' padding='.1rem 0' margin='0  .3rem' key={idx}>
-            <Button bg={bg.tag} border='' height='2rem' _onClick={removeTag}>
-              {`${tag} X`}
-            </Button>
-          </Grid>
-        ))}
+    <Grid padding="0 0 0 1rem">
+      <Grid border padding=".5rem">
+        <Grid padding=".5rem 0 .5rem .5rem">
+          <Text>지정된 필터 태그</Text>
+        </Grid>
+        <Grid isFlex isWrap>
+          {selectedTag.map((tag, idx) => (
+            <Grid
+              width="5rem"
+              isFlex
+              justify="center"
+              padding=".1rem 0"
+              margin="0  .3rem"
+              key={idx}
+            >
+              <Button bg={bg.tag} border="" height="2rem" _onClick={removeTag}>
+                {`${tag} X`}
+              </Button>
+            </Grid>
+          ))}
+        </Grid>
       </Grid>
     </Grid>
   );
