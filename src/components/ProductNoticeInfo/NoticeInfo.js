@@ -8,7 +8,6 @@ const NoticeInfo = ({
 	DeleteNoticeInfoHandler,
 	idx,
 	noticeInfoOptions,
-	upperInput,
 }) => {
 	const [clickFlag, setClickFlag] = useState();
 	const [moreNoticeOptions, setMoreNoticeOptions] = useState([
