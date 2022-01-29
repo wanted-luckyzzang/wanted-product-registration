@@ -1,4 +1,5 @@
 import { Grid, ImageUpload, Text } from 'common';
+import { FooterBtn } from 'components';
 
 const ImageSelect = () => {
   return (
@@ -36,6 +37,7 @@ const ImageSelect = () => {
           </Grid>
         </Grid>
       </Grid>
+      <FooterBtn params="noticeinfo" />
     </>
   );
 };
