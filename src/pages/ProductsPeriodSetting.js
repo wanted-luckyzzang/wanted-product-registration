@@ -1,10 +1,8 @@
 import React, { useCallback, useState } from "react";
-import { useNavigate } from "react-router";
-import { ProductPeriod } from "components";
-import { Grid, Button } from "common";
+import { FooterBtn, ProductPeriod } from "components";
+import { Grid } from "common";
 
 const ProductsPeriodSetting = () => {
-	const navigate = useNavigate();
 	const [selectedShowingOption, setSelectedShowingOption] = useState();
 	const [selectedSellingOption, setSelectedSellingOption] = useState();
 	const [showingPeriod, setShowingPeriod] = useState(null);
@@ -61,7 +59,6 @@ const ProductsPeriodSetting = () => {
 					height="2.5rem"
 					isFlex
 					align="center"
-					borderRight
 					borderBottom
 					padding="0 0 0 1rem"
 				>
@@ -78,14 +75,12 @@ const ProductsPeriodSetting = () => {
 					selectedOption={selectedSellingOption}
 					selectBtnHandler={selectSellingBtnHandler}
 				/>
-				<Button
-					_onClick={() => {
-						navigate(`/basicInfo`);
-						result(selectedShowingOption, selectedSellingOption);
-					}}
-				>
-					다음
-				</Button>
+				<FooterBtn
+					params="basicinfo"
+					func={result}
+					arg1={selectedShowingOption}
+					arg2={selectedSellingOption}
+				/>
 			</Grid>
 		</Grid>
 	);

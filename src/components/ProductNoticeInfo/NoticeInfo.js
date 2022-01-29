@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
-import { Grid, Button, Text, Input } from "common";
+import { Button, Text, Input } from "common";
 
 const NoticeInfo = ({
 	ChangeNoticeInfohandler,

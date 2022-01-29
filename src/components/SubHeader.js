@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { Grid, Button, Text } from "common";
 
 const SubHeader = () => {

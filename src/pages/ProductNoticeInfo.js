@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
 import { Grid, Button, Text } from "common";
@@ -52,12 +52,12 @@ const ProductNoticeInfo = () => {
 		console.log(e.target[21].checked);
 	};
 
-	useEffect(() => {
-		console.log("user 값이 설정됨");
-		return () => {
-			console.log("버튼을 누르면 찍힘");
-		};
-	}, []);
+	// useEffect(() => {
+	// 	console.log("user 값이 설정됨");
+	// 	return () => {
+	// 		console.log("버튼을 누르면 찍힘");
+	// 	};
+	// }, []);
 
 	return (
 		<>
