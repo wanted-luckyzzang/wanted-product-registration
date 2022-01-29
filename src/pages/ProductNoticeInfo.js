@@ -9,7 +9,7 @@ import {
 	SaveMileage,
 } from "components/ProductNoticeInfo/index";
 import { FooterBtn } from "components";
-const ProductNoticeInfo = () => {
+const ProductNoticeInfo = (props) => {
 	const [noticeInfo, setNoticeInfo] = useState([
 		{
 			noticeInfo: uuidv4(),
@@ -33,45 +33,12 @@ const ProductNoticeInfo = () => {
 		});
 	};
 
-	const ClickInfoOptionHandler = (e) => {
-		e.preventDefault();
-		console.log(e);
-		console.log(e.target[1].value);
-		console.log(e.target[2].value);
-		console.log(e.target[3].value);
-		console.log(e.target[4].value);
-		console.log(e.target[5].value);
-		console.log(e.target[6].value);
-		console.log(e.target[7].value);
-		console.log(e.target[11].checked);
-		console.log(e.target[12].checked);
-		console.log(e.target[13].checked);
-		console.log(e.target[14].value, e.target[15].value);
-		console.log(e.target[16].value, e.target[18].value);
-		console.log(e.target[20].checked);
-		console.log(e.target[21].checked);
-	};
-
-	// useEffect(() => {
-	// 	console.log("user 값이 설정됨");
-	// 	return () => {
-	// 		console.log("버튼을 누르면 찍힘");
-	// 	};
-	// }, []);
-
+	console.log(props.params);
 	return (
 		<>
 			<Grid isFlex>
 				<Grid border isFlex column>
-					<Grid
-						marginTop="2rem"
-						isFlex
-						column
-						gridType="form"
-						_onSubmit={ClickInfoOptionHandler}
-						return
-						false
-					>
+					<Grid marginTop="2rem" isFlex column gridType="form" return false>
 						<Grid border height="2.5rem" width="auto" margin="2rem 2rem 0 2rem">
 							<Text bold size="1rem" margin="0.5rem">
 								상품 정보 고시
@@ -172,7 +139,6 @@ const ProductNoticeInfo = () => {
 							{/* 20번 감사카드 제공 */}
 							<OfferThankCard />
 						</Grid>
-						<button type="submit">제출</button>
 					</Grid>
 				</Grid>
 			</Grid>
