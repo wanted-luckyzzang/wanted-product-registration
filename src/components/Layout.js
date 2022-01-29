@@ -4,7 +4,7 @@ import { Header, SubHeader, Navbar } from "components";
 
 const Layout = ({ children }) => {
 	return (
-		<Grid width="72rem" isFlex column margin="auto">
+		<Grid width="72rem" isFlex column margin="auto" border>
 			<Header />
 			<Grid isFlex>
 				<Navbar />
