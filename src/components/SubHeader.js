@@ -1,4 +1,4 @@
-import { Grid, Text } from 'common';
+import { Grid, Button, Text } from 'common';
 
 const SubHeader = () => {
   return (
