@@ -28,7 +28,7 @@ const BigOption = ({ setOptionSetData }) => {
   }, []);
 
   return (
-    <Grid column border="#e3e3e3" padding="1rem">
+    <Grid column border="#e3e3e3" padding="1rem" margin="0 0 1rem 0">
       <ImageUpload preview setOptionSetData={setOptionSetData} />
       {option.map((el, idx) => (
         <SmallOption
