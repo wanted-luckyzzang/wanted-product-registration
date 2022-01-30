@@ -8,20 +8,14 @@ const PreviewImage = styled.img`
   height: 100%;
 `;
 
-const ImageUpload = ({
-  preview,
-  setProductImage = null,
-  setOptionSetData = null,
-}) => {
+const ImageUpload = ({ preview, setProductImage, setOptionSetData }) => {
   const [images, setImages] = useState([]);
   const [url, setUrl] = useState('');
   const imgInputRef = useRef(null);
   const imgPreviewInputRef = useRef(null);
-
   // ################### not preview ################### //
 
   const addImageButton = () => {
-    setImages([]);
     imgInputRef.current.click();
   };
 
@@ -30,7 +24,7 @@ const ImageUpload = ({
     for (const idx in files) {
       if (!isNaN(idx)) {
         setImages((prev) => [...prev, files[idx].name]);
-        setProductImage((images) => [...images]);
+        setProductImage?.(files[idx].name);
       }
     }
   };
@@ -64,7 +58,7 @@ const ImageUpload = ({
       .then((res) => res.json())
       .then((data) => {
         setUrl(data.url);
-        setOptionSetData((prev) => [
+        setOptionSetData?.((prev) => [
           ...prev,
           {
             imageUrl: data.url,
@@ -145,4 +139,4 @@ const ImageUpload = ({
   );
 };
 
-export default ImageUpload;
+export default React.memo(ImageUpload);

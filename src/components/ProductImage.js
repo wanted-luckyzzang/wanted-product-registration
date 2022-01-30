@@ -1,6 +1,5 @@
 import React from 'react';
-import ImageUpload from './ImageUpload';
-import { Grid, Text } from 'common';
+import { Grid, ImageUpload, Text } from 'common';
 import { bg } from 'styles/palette';
 
 const ProductImage = ({ setProductImage }) => {

@@ -13,7 +13,7 @@ const BasicInfo = () => {
   const [category, setCategory] = useState([]);
   const [filterTag, setFilterTag] = useState([]);
   const [productInfo, setProductInfo] = useState(null);
-  const [productImage, setProductImage] = useState([]);
+  const [productImage, setProductImage] = useState('');
   const [productRest, setProductRest] = useState(0);
 
   const consoleResult = useCallback(() => {

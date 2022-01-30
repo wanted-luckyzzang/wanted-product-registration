@@ -1,6 +1,5 @@
 import FilterTag from './FilterTag/FilterTag';
 import Category from './Category';
-import ImageUpload from './ImageUpload';
 import Layout from './Layout';
 import Header from './Header';
 import SubHeader from './SubHeader';
@@ -16,7 +15,6 @@ import FooterBtn from './FooterBtn';
 export {
   FilterTag,
   Category,
-  ImageUpload,
   Layout,
   Header,
   SubHeader,
