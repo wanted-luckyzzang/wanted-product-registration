@@ -50,6 +50,37 @@
 - 6번. 상품 구성 소개 정보
 - 9번. 상품 총 재고<br/>
 
+
+## 🛶 문제 해결 로그
+
+### 문제
+px로 컴포넌트 박스 구현 시 모니터 크기에 따라 박스 크기의 비율이 달라지는 현상을 발견하였습니다.
+
+### 해결
+px 대신 **rem** 개념을 사용하여 최상위 root 태그의 **font-size**를 기준으로 모니터 크기에 따라 다른 px값이 적용되도록 하였습니다.
+```jsx
+// App.css
+
+#root {
+  font-size: 16px; // root에서 font-size를 지정하였습니다.
+}
+
+// 미디어 쿼리를 통해 서로 다른 모니터 크기에 따라 root의 font-size가 다르게 적용되도록 하였습니다.
+@media screen and (max-width: 1500px) {
+  #root {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 2550px) {
+  #root {
+    font-size: 20px;
+  }
+}
+
+// 예: width를 40rem이라고 하면 각 모니터에 적용된 font-size에 따라 width의 전체 px 값이 결정됨
+```
+
+
 ## 🧶 설치 및 시작하는 법
 
 ```
@@ -116,34 +147,4 @@ npm run start
     │   ├── DatePicker.js
     │   └── DateRangePicker.js
     └── tagData.js			// filter tag Data 자료
-```
-
-### 🛶 문제 해결 로그
-
-#### 문제
-px로 컴포넌트 박스 구현 시 모니터 크기에 따라 박스 크기의 비율이 달라지는 현상을 발견하였습니다.
-
-#### 해결
-px 대신 rem 개념을 사용하여 최상위 root 태그의 font-size를모니터 크기별로 반응형
-으로 적용하였습니다. (App.css에 작성)
-```jsx
-// App.css
-
-#root {
-  font-size: 16px; // root에서 font-size를 지정하였습니다.
-}
-
-// 미디어 쿼리를 통해 서로 다른 모니터 크기에 따라 root의 font-size가 다르게 적용되도록 하였습니다.
-@media screen and (max-width: 1500px) {
-  #root {
-    font-size: 18px;
-  }
-}
-@media screen and (max-width: 2550px) {
-  #root {
-    font-size: 20px;
-  }
-}
-
-// 예: width를 40rem이라고 하면 각 모니터에 적용된 font-size에 따라 width의 전체 px 값이 결정됨
 ```
